@@ -1,25 +1,26 @@
 import 'package:flutter/material.dart';
 
+class SizeConfig {
+  static late MediaQueryData _mediaQueryData;
+  static late double screenWidth;
+  static late double screenHeight;
+  static late double defaultSize;
+  static late Orientation orientation;
 
-final navigatorKey = GlobalKey<NavigatorState>();
+  static void init(BuildContext context) {
+    _mediaQueryData = MediaQuery.of(context);
+    screenWidth = _mediaQueryData.size.width;
+    screenHeight = _mediaQueryData.size.height;
+    orientation = _mediaQueryData.orientation;
+  }
+}
 
-const kDesignHeight = 768;
-const kDesignWidth = 375;
-const kDesignDrawerWidth = 318;
+double getProportionateScreenHeight(double inputHeight) {
+  double screenHeight = SizeConfig.screenHeight;
+  return (inputHeight / 844.0) * screenHeight;
+}
 
-final _deviceProperties = MediaQuery.of(navigatorKey.currentContext!);
-
-final _screenHeight = _deviceProperties.size.height;
-final _screenWidth = _deviceProperties.size.width;
-
-final kDisplayWidth = _screenWidth -
-    _deviceProperties.viewInsets.left -
-    _deviceProperties.viewInsets.right -
-    _deviceProperties.systemGestureInsets.left -
-    _deviceProperties.systemGestureInsets.right;
-
-final kDisplayHeight = _screenHeight -
-    _deviceProperties.viewInsets.top -
-    _deviceProperties.viewInsets.bottom -
-    _deviceProperties.systemGestureInsets.top -
-    _deviceProperties.systemGestureInsets.bottom;
+double getProportionateScreenWidth(double inputWidth) {
+  double screenWidth = SizeConfig.screenWidth;
+  return (inputWidth / 390.0) * screenWidth;
+}
