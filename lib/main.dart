@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 
+import 'core/constants/dimension.dart';
 import 'features/splash_screen/splash_screen.dart';
 
 void main() {
@@ -18,6 +19,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
           useMaterial3: true,
         ),
+        navigatorKey: navigatorKey,
         home: const SplashScreen());
   }
 }
