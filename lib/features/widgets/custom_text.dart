@@ -20,7 +20,7 @@ Text customTextPoppinsCenter({
   );
 }
 
-Text customTextInter({
+Text customTextNotoSans({
   required String inputText,
   required double fontSize,
   required FontWeight weight,
@@ -28,7 +28,7 @@ Text customTextInter({
 }) {
   return Text(
     inputText,
-    style: GoogleFonts.inter(
+    style: GoogleFonts.notoSans(
         fontSize: getProportionateScreenWidth(fontSize),
         fontWeight: weight,
         color: colorName),
@@ -37,16 +37,18 @@ Text customTextInter({
 
 Text customTextPppinsSpacing({
   required String inputText,
-  required double letterSpacing,
+  required double height,
   required double fontSize,
   required FontWeight weight,
   required Color colorName,
 }) {
   return Text(
+   
     inputText,
-    style: GoogleFonts.poppins(
+    style: GoogleFonts.notoSans(
         fontSize: getProportionateScreenWidth(fontSize),
         fontWeight: weight,
+        height: height,
         color: colorName),
   );
 }

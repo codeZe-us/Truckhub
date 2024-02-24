@@ -13,4 +13,17 @@ class Assets {
   static const String pathImg = 'assets/png';
   static const String back = '$pathImg/back.png';
   static const String truck = '$pathImg/truck.png';
+  static const String f1 = '$pathImg/f1.png';
+
+  static const pics = [
+    {
+      'image': '$pathImg/f1.png',
+    },
+    {
+      'image': '$pathImg/f1.png',
+    },
+    {
+      'image': '$pathImg/f1.png',
+    },
+  ];
 }

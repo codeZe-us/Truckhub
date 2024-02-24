@@ -4,6 +4,7 @@ import 'package:truckhub/core/constants/color.dart';
 import 'package:truckhub/features/widgets/custom_circle_container.dart';
 
 import '../../core/constants/dimension.dart';
+import '../onboarding/onboarding_screen.dart';
 
 class SplashScreen extends StatefulWidget {
   const SplashScreen({super.key});
@@ -15,18 +16,18 @@ class SplashScreen extends StatefulWidget {
 class _SplashScreenState extends State<SplashScreen> {
   @override
   void initState() {
-    // navigate();
+    navigate();
     super.initState();
   }
 
-  // void navigate() {
-  //   Future.delayed(const Duration(seconds: 5), () {
-  //     Navigator.pushReplacement(
-  //       context,
-  //       MaterialPageRoute(builder: (context) => const OnboardingScreen()),
-  //     );
-  //   });
-  // }
+  void navigate() {
+    Future.delayed(const Duration(seconds: 5), () {
+      Navigator.pushReplacement(
+        context,
+        MaterialPageRoute(builder: (context) => const OnboardingScreen()),
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
