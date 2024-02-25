@@ -67,3 +67,30 @@ class PrimaryButton extends StatelessWidget {
     );
   }
 }
+
+
+
+class OnboardingButton extends StatelessWidget {
+  final VoidCallback? onPressed;
+  final Widget child;
+  const OnboardingButton({super.key, required this.onPressed, required this.child});
+
+  @override
+  Widget build(BuildContext context) {
+    return SizedBox(
+      height: 54,
+      width: 353,
+      child: ElevatedButton(
+        onPressed: onPressed,
+        style: ElevatedButton.styleFrom(
+          elevation: 0,
+          backgroundColor: AppColors.blackColor,
+          shape: RoundedRectangleBorder(
+            borderRadius: BorderRadius.circular(40),
+          ),
+        ),
+        child: child
+      ),
+    );
+  }
+}

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:truckhub/core/constants/spacing.dart';
 import 'package:truckhub/core/constants/string.dart';
+import 'package:truckhub/features/authentication/screens/login/login.dart';
 import 'package:truckhub/features/widgets/custom_circle_container.dart';
 
 import '../../core/constants/color.dart';
@@ -38,7 +39,7 @@ class _OnboardingContentState extends State<OnboardingContent> {
               fit: BoxFit.contain,
             ),
             Positioned(
-              top: 432,
+              top: getProportionateScreenHeight(432),
               left: 27,
               right: 27,
               child: customTextPppinsSpacing(
@@ -49,7 +50,7 @@ class _OnboardingContentState extends State<OnboardingContent> {
                   inputText: widget.title!),
             ),
             Positioned(
-              top: 540,
+              top: getProportionateScreenHeight(560),
               left: 27,
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.center,
@@ -61,20 +62,28 @@ class _OnboardingContentState extends State<OnboardingContent> {
           ],
         ),
         SizedBox(height: getProportionateScreenHeight(41)),
-        CircleContainer(
-            height: 56,
-            width: 232,
-            color: AppColors.blackColor,
-            borderRadius: 48,
-            child: Center(
-              child: customTextPppinsSpacing(
-                  colorName: AppColors.primaryColor,
-                  weight: FontWeight.w600,
-                  fontSize: 16,
-                  height: 24 / 16,
-                  inputText: StaticText.find),
-            )),
-            SpacingManager.h17,
+        InkWell(
+          onTap: () {
+            Navigator.push(
+              context,
+              MaterialPageRoute(builder: (context) => const LoginPage()),
+            );
+          },
+          child: CircleContainer(
+              height: 56,
+              width: 232,
+              color: AppColors.blackColor,
+              borderRadius: 48,
+              child: Center(
+                child: customTextPppinsSpacing(
+                    colorName: AppColors.primaryColor,
+                    weight: FontWeight.w600,
+                    fontSize: 16,
+                    height: 24 / 16,
+                    inputText: StaticText.find),
+              )),
+        ),
+        SpacingManager.h17,
         CircleContainer2(
             borderWidth: 1,
             height: 56,

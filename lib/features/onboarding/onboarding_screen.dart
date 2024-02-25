@@ -33,30 +33,18 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               },
               itemCount: onBoardingData.length,
               itemBuilder: (context, index) => OnboardingContent(
-                image: Assets.pics[index]["image"],
-                title: onBoardingData[index]["title"],
-                currentIndex: index,
-                contentWidget: 
-                Row(
-                  children:    
-                   List.generate(
-                  onBoardingData.length,
-                  (index) => BuildDot(
-                    currentPage: currentPage,
-                    index: index,
-                  ),
-                ),
-                    
-                  
-                )
-                   //  List.generate(
-                //   onBoardingData.length,
-                //   (index) => BuildDot(
-                //     currentPage: widget.currentIndex ?? 0,
-                //     index: index,
-                //   ),
-                // ),
-              ),
+                  image: Assets.pics[index]["image"],
+                  title: onBoardingData[index]["title"],
+                  currentIndex: index,
+                  contentWidget: Row(
+                    children: List.generate(
+                      onBoardingData.length,
+                      (index) => BuildDot(
+                        currentPage: currentPage,
+                        index: index,
+                      ),
+                    ),
+                  )),
             ),
           ),
         ],
