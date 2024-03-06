@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:truckhub/screens/views/welcome_back_screen.dart';
 
 import 'features/splash_screen/splash_screen.dart';
 
@@ -13,12 +14,15 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'TruckHub',
-        theme: ThemeData(
-          colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-          useMaterial3: true,
+      debugShowCheckedModeBanner: false,
+      title: 'TruckHub',
+      theme: ThemeData(
+        colorScheme: ColorScheme.fromSeed(
+          seedColor: Colors.deepPurple
         ),
-        home: const SplashScreen());
+        useMaterial3: true,
+      ),
+      home: const WelcomeBackScreen()
+    );
   }
 }
