@@ -38,12 +38,12 @@ class _GenericTextFieldState extends State<GenericTextField> {
         labelStyle: GoogleFonts.getFont(
           'Nunito',
           color: blackColor.withOpacity(0.5),
-          fontSize: fontSize15,
+          fontSize: fontSize3,
           fontWeight: fontWeight4
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
-            color: blackColor
+            color: greenColor
           ),
           borderRadius: BorderRadius.circular(50),
         ),
@@ -63,7 +63,7 @@ class _GenericTextFieldState extends State<GenericTextField> {
       ),
       style: GoogleFonts.getFont(
         'Nunito',
-        fontSize: fontSize15,
+        fontSize: fontSize3,
         fontWeight: fontWeight4,
       ),
     );

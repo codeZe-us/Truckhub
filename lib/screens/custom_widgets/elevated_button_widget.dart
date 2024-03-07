@@ -26,6 +26,7 @@ class GenericElevatedButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return Container(
       width: MediaQuery.of(context).size.width,
+      height: 50,
       margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
       child: ElevatedButton(
         onPressed: onPressed,
@@ -43,7 +44,7 @@ class GenericElevatedButton extends StatelessWidget {
         ),
         child: GenericText(
           color: color ?? whiteColor,
-          fontSize: fontSize ?? fontSize15,
+          fontSize: fontSize ?? fontSize3,
           fontWeight: fontWeight ?? fontWeight5,
           text: title
         )

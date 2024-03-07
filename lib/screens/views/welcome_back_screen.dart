@@ -59,7 +59,7 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                 const Gap(10),
                 const GenericText(
                   color: blackColor,
-                  fontSize: fontSize25,
+                  fontSize: fontSize5,
                   fontWeight: fontWeight7,
                   text: welcomeBackString,
                 ),
