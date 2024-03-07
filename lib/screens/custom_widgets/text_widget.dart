@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:google_fonts/google_fonts.dart';
 
 class GenericText extends StatelessWidget {
   final Color color;
@@ -18,8 +19,8 @@ class GenericText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Text(
       text,
-      style: TextStyle(
-        fontFamily: 'sans-serif',
+      style: GoogleFonts.getFont(
+        'Roboto',
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,

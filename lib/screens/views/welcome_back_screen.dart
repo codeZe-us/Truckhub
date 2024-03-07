@@ -52,12 +52,14 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
         body: Padding(
           padding: const EdgeInsets.all(20.0),
           child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            mainAxisSize: MainAxisSize.min,
             children: [
               const Gap(10),
               const GenericText(
                 color: blackColor,
                 fontSize: fontSize20,
-                fontWeight: fontWeight3,
+                fontWeight: fontWeight7,
                 text: welcomeBackString,
               ),
               const Gap(20),
@@ -70,9 +72,9 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                 hintText: passwordString,
                 controller: passwordController,
               ),
-              const Gap(10),
+              const Gap(5),
               GenericTextButton(
-                onPressed: (){
+                onTap: (){
                   //Implement the funtionality of this TextButton here
                 },
                 title: forgotPasswordString
@@ -84,6 +86,7 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                 },
                 title: logInString
               ),
+              const Gap(50),
               const RichTextWidget()
             ],
           ),
