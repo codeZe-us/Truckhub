@@ -51,44 +51,56 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            mainAxisSize: MainAxisSize.min,
-            children: [
-              const Gap(10),
-              const GenericText(
-                color: blackColor,
-                fontSize: fontSize20,
-                fontWeight: fontWeight7,
-                text: welcomeBackString,
-              ),
-              const Gap(20),
-              GenericTextField(
-                hintText: phoneNumberString,
-                controller: phoneNumberController,
-              ),
-              const Gap(20),
-              GenericTextField(
-                hintText: passwordString,
-                controller: passwordController,
-              ),
-              const Gap(5),
-              GenericTextButton(
-                onTap: (){
-                  //Implement the funtionality of this TextButton here
-                },
-                title: forgotPasswordString
-              ),
-              const Gap(40),
-              GenericElevatedButton(
-                onPressed: (){
-                  //Implement the Log in funtionality here.
-                },
-                title: logInString
-              ),
-              const Gap(50),
-              const RichTextWidget()
-            ],
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              mainAxisSize: MainAxisSize.min,
+              children: [
+                const Gap(10),
+                const GenericText(
+                  color: blackColor,
+                  fontSize: fontSize25,
+                  fontWeight: fontWeight7,
+                  text: welcomeBackString,
+                ),
+                const Gap(15),
+                GenericTextField(
+                  hintText: phoneNumberString,
+                  controller: phoneNumberController,
+                ),
+                const Gap(20),
+                GenericTextField(
+                  showSuffixIcon: true,
+                  hintText: passwordString,
+                  controller: passwordController,
+                ),
+                const Gap(5),
+                GenericTextButton(
+                  onTap: (){
+                    //Implement the funtionality of this TextButton here
+                  },
+                  title: forgotPasswordString
+                ),
+                const Gap(40),
+                GenericElevatedButton(
+                  onPressed: (){
+                    //Implement the Log in funtionality here.
+                  },
+                  title: logInString
+                ),
+                const Gap(50),
+                RichTextWidget(
+                  children: [
+                    dontHaveAccountString,
+                    [
+                      createAnAccountString,
+                      greenColor,
+                      (){/*Implement the functionality of creating an account here*/},
+                    ]
+                  ],
+                )
+              ],
+            ),
           ),
         )
       ),

@@ -6,12 +6,18 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 
 class GenericTextButton extends StatelessWidget {
   final void Function() onTap;
+  final Color? color;
+  final double? fontSize;
+  final FontWeight? fontWeight;
   final String title;
 
   const GenericTextButton({
     super.key,
     required this.onTap,
-    required this.title
+    required this.title,
+    this.fontSize,
+    this.color,
+    this.fontWeight
   });
 
   @override
@@ -19,9 +25,9 @@ class GenericTextButton extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: GenericText(
-        color: greenColor,
-        fontSize: fontSize10,
-        fontWeight: fontWeight7,
+        color: color ?? greenColor,
+        fontSize: fontSize ?? fontSize10,
+        fontWeight: fontWeight ?? fontWeight7,
         text: title
       ),
     );

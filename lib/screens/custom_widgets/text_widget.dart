@@ -20,7 +20,7 @@ class GenericText extends StatelessWidget {
     return Text(
       text,
       style: GoogleFonts.getFont(
-        'Roboto',
+        'Nunito',
         fontSize: fontSize,
         fontWeight: fontWeight,
         color: color,
