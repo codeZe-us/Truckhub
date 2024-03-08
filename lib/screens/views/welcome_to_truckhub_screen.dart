@@ -11,28 +11,30 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textbutton_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
 
-class WelcomeBackScreen extends StatefulWidget {
-  const WelcomeBackScreen({super.key});
+class WelcomeToTruckHubScreen extends StatefulWidget {
+  const WelcomeToTruckHubScreen({super.key});
 
   @override
-  State<WelcomeBackScreen> createState() => _WelcomeBackScreenState();
+  State<WelcomeToTruckHubScreen> createState() => _WelcomeToTruckHubScreenState();
 }
 
-class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
+class _WelcomeToTruckHubScreenState extends State<WelcomeToTruckHubScreen> {
   late TextEditingController phoneNumberController,
-  passwordController;
+  passwordController, nameController;
 
   @override 
   void initState(){
     super.initState();
     phoneNumberController = TextEditingController();
     passwordController = TextEditingController();
+    nameController = TextEditingController();
   }
 
   @override 
   void dispose(){
     phoneNumberController.dispose();
     passwordController.dispose();
+    nameController.dispose();
     super.dispose();
   }
 
@@ -60,8 +62,20 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                 const GenericText(
                   color: blackColor,
                   fontSize: fontSize4,
-                  fontWeight: fontWeight6,
-                  text: welcomeBackString,
+                  fontWeight: fontWeight7,
+                  text: welcomeToTruckHubString,
+                ),
+                const Gap(5),
+                const GenericText(
+                  color: blackColor,
+                  fontSize: fontSize3,
+                  fontWeight: fontWeight5,
+                  text: createAnAccountString,
+                ),
+                const Gap(15),
+                GenericTextField(
+                  hintText: nameString,
+                  controller: nameController,
                 ),
                 const Gap(15),
                 GenericTextField(
@@ -74,28 +88,28 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                   hintText: passwordString,
                   controller: passwordController,
                 ),
-                const Gap(5),
-                GenericTextButton(
-                  onTap: (){
-                    //Implement the funtionality of this TextButton here
-                  },
-                  title: forgotPasswordString
+                const Gap(10),
+                const GenericText(
+                  color: blackColor,
+                  fontSize: fontSize2,
+                  fontWeight: fontWeight4,
+                  text: sixCharactersString,
                 ),
                 const Gap(40),
                 GenericElevatedButton(
                   onPressed: (){
                     //Implement the Log in funtionality here.
                   },
-                  title: logInString
+                  title: createAccountString
                 ),
                 const Gap(50),
                 RichTextWidget(
                   children: [
-                    dontHaveAccountString,
+                    haveAccountString,
                     [
-                      createAnAccountString,
+                      logInString,
                       greenColor,
-                      (){/*Send the user to the create account screen*/},
+                      (){/*Send the user to the login screen here*/},
                     ]
                   ],
                 )

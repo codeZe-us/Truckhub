@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:truckhub/screens/views/confirm_phone_number/pincode_view.dart';
 import 'package:truckhub/screens/views/welcome_back_screen.dart';
+import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
 
 import 'features/splash_screen/splash_screen.dart';
 
@@ -23,7 +24,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const ConfirmPhoneNumberScreen()
+      home: const WelcomeToTruckHubScreen()
     );
   }
 }
