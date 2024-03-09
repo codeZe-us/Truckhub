@@ -1,8 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:truckhub/screens/constants/colors.dart';
+import 'package:truckhub/screens/constants/fontsizes.dart';
+import 'package:truckhub/screens/constants/fontweights.dart';
+import 'package:truckhub/screens/utils/extensions.dart';
 import 'package:truckhub/screens/views/confirm_phone_number/pincode_view.dart';
 import 'package:truckhub/screens/views/home_screen/main_home_screen.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/google_map_view.dart';
+import 'package:truckhub/screens/views/pickup_locaton_and_destination_search_view.dart';
 import 'package:truckhub/screens/views/welcome_back_screen.dart';
 import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
 
@@ -22,12 +26,22 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       title: 'TruckHub',
       theme: ThemeData(
+        navigationBarTheme: NavigationBarThemeData(
+          labelTextStyle: MaterialStatePropertyAll(
+            const TextStyle().decorateTextStyle(
+              color: blackColor,
+              fontWeight: fontWeight7,
+              fontSize: fontSize2
+            )
+          ),
+        ),
+
         colorScheme: ColorScheme.fromSeed(
           seedColor: whiteColor
         ),
         useMaterial3: true,
       ),
-      home: const MainHomeScreen()
+      home: const PickupLocationAndDestinationSearchScreen()
     );
   }
 }

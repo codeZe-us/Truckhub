@@ -50,7 +50,6 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
         ),
 
         bottomNavigationBar: NavigationBar(
-          elevation: 0,
           height: 70,
           destinations: navDestinations,
           selectedIndex: currentPageIndex,

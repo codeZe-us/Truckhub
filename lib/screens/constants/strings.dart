@@ -40,3 +40,5 @@ const hubString = 'Hub';
 const homeString = 'Home';
 const notificationString = 'Notification';
 const accountsString = 'Account';
+const pickupLocationString = 'Pickup location in Nsukka';
+const destinationString = 'Destination';

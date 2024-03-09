@@ -7,7 +7,7 @@ import 'package:truckhub/screens/utils/extensions.dart';
 class GenericTextField extends StatefulWidget {
   final String hintText;
   final TextEditingController controller;
-  final bool? showSuffixIcon;
+  final bool? showSuffixIcon, obscureText;
   final Widget? leadingWidget;
 
   const GenericTextField({
@@ -15,6 +15,7 @@ class GenericTextField extends StatefulWidget {
     required this.hintText,
     required this.controller,
     this.showSuffixIcon,
+    this.obscureText,
     this.leadingWidget
   });
 
@@ -32,7 +33,7 @@ class _GenericTextFieldState extends State<GenericTextField> {
       maxLines: 1,
       autocorrect: true, 
       cursorColor: blackColor,
-      obscureText: !isVisible ? true : false,             
+      obscureText: !isVisible && (widget.obscureText ?? false) ? true : false,             
       cursorWidth: 1,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
