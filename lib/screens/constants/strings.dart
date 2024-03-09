@@ -1,3 +1,14 @@
+const backgroundSvg = 'assets/svg/background.svg';
+const firstSvg = 'assets/svg/first.svg';
+const secondSvg = 'assets/svg/second.svg';
+const thirdSvg = 'assets/svg/third.svg';
+const truckHubSvg = 'assets/svg/Truckhub.svg';
+
+const backgroundPng = 'assets/png/back.png';
+const personPng = 'assets/png/f1.png';
+const truckHubLogoPng = 'assets/png/truck.png';
+
+
 const nunitoFont = 'Nunito';
 const welcomeBackString = 'Welcome back!';
 const phoneNumberString = 'Phone Number';
@@ -26,3 +37,6 @@ const okString = 'Ok';
 const searchForDriversString = 'Search For Drivers...';
 const truckString = 'Truck';
 const hubString = 'Hub';
+const homeString = 'Home';
+const notificationString = 'Notification';
+const accountsString = 'Account';
