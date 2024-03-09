@@ -20,3 +20,6 @@ const haveAccountString = 'Have an account? ';
 const enableLocationString = 'Enable your location';
 const enableYourLocationString = 'Enable your location to find truck drivers around you';
 const enableString = 'Enable';
+const youAreOfflineString = "You're offline";
+const connectToInternetString = 'Turn on your data or connect to a wifi';
+const okString = 'Ok';
