@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
+import 'package:truckhub/screens/utils/extensions.dart';
 
 class GenericTextField extends StatefulWidget {
   final String hintText;
@@ -35,11 +35,10 @@ class _GenericTextFieldState extends State<GenericTextField> {
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
         isDense: true,
-        labelStyle: GoogleFonts.getFont(
-          'Nunito',
+        labelStyle: const TextStyle().decorateTextStyle(
           color: blackColor.withOpacity(0.5),
-          fontSize: fontSize3,
-          fontWeight: fontWeight4
+          fontWeight: fontWeight4,
+          fontSize: fontSize3
         ),
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
@@ -61,11 +60,11 @@ class _GenericTextFieldState extends State<GenericTextField> {
           )
         ) : null
       ),
-      style: GoogleFonts.getFont(
-        'Nunito',
-        fontSize: fontSize3,
+      style: const TextStyle().decorateTextStyle(
+        color: blackColor.withOpacity(0.5),
         fontWeight: fontWeight4,
-      ),
+        fontSize: fontSize3
+      )
     );
   }
 }

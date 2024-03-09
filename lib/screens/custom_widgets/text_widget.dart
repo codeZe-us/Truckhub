@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:truckhub/screens/constants/strings.dart';
+import 'package:truckhub/screens/utils/extensions.dart';
 
 class GenericText extends StatelessWidget {
   final Color color;
@@ -18,15 +17,10 @@ class GenericText extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: GoogleFonts.getFont(
-        nunitoString,
-        fontSize: fontSize,
-        fontWeight: fontWeight,
-        color: color,
-      ),
-      softWrap: true,
+    return Text(text).decorateText(
+      color: color,
+      fontWeight: fontWeight,
+      fontSize: fontSize
     );
   }
 }

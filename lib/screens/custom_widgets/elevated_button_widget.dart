@@ -11,6 +11,7 @@ class GenericElevatedButton extends StatelessWidget {
   backgroundColor;
   final double? fontSize;
   final FontWeight? fontWeight;
+  final bool? noMargin;
 
   const GenericElevatedButton({
     super.key,
@@ -19,6 +20,7 @@ class GenericElevatedButton extends StatelessWidget {
     this.color,
     this.backgroundColor,
     this.fontSize,
+    this.noMargin,
     this.fontWeight
   });
 
@@ -27,7 +29,7 @@ class GenericElevatedButton extends StatelessWidget {
     return Container(
       width: MediaQuery.of(context).size.width,
       height: 50,
-      margin: const EdgeInsets.fromLTRB(50, 0, 50, 0),
+      margin: noMargin ?? false ? null : const EdgeInsets.fromLTRB(50, 0, 50, 0),
       child: ElevatedButton(
         onPressed: onPressed,
         style: ButtonStyle(

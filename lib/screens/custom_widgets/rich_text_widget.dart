@@ -1,9 +1,9 @@
 import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
 import 'package:truckhub/screens/constants/colors.dart';
+import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
-import 'package:truckhub/screens/constants/strings.dart';
+import 'package:truckhub/screens/utils/extensions.dart';
 
 class RichTextWidget extends StatelessWidget {
   final List<dynamic> children;
@@ -28,21 +28,19 @@ class RichTextWidget extends StatelessWidget {
                 return TextSpan(
                   text: text,
                   recognizer: TapGestureRecognizer()..onTap = function,
-                  style: GoogleFonts.getFont(
-                    nunitoString,
-                    color: color,
-                    fontWeight: fontWeight7
-                  )
+                ).decorateTextSpan(
+                  color: color,
+                  fontWeight: fontWeight7,
+                  fontSize: fontSize3
                 );
               }
       
               return TextSpan(
-                text: child as String,
-                style: GoogleFonts.getFont(
-                  nunitoString,
-                  color: blackColor,
-                  
-                )
+                text: child as String
+              ).decorateTextSpan(
+                color: blackColor,
+                fontWeight: fontWeight2,
+                fontSize: fontSize3
               );
             }
           ).toList()

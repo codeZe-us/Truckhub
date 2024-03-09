@@ -1,4 +1,4 @@
-const nunitoString = 'Nunito';
+const nunitoFont = 'Nunito';
 const welcomeBackString = 'Welcome back!';
 const phoneNumberString = 'Phone Number';
 const passwordString = 'Password';
@@ -17,3 +17,6 @@ const createAccountString = 'Create Account';
 const nameString = 'Name';
 const sixCharactersString = 'A minimum of six(6) characters';
 const haveAccountString = 'Have an account? ';
+const enableLocationString = 'Enable your location';
+const enableYourLocationString = 'Enable your location to find truck drivers around you';
+const enableString = 'Enable';

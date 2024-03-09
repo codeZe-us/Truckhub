@@ -8,8 +8,8 @@ import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/rich_text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
-import 'package:truckhub/screens/custom_widgets/textbutton_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
+import 'package:truckhub/screens/views/enable_your_location_dialog.dart';
 
 class WelcomeToTruckHubScreen extends StatefulWidget {
   const WelcomeToTruckHubScreen({super.key});
@@ -97,8 +97,14 @@ class _WelcomeToTruckHubScreenState extends State<WelcomeToTruckHubScreen> {
                 ),
                 const Gap(40),
                 GenericElevatedButton(
-                  onPressed: (){
-                    //Implement the Log in funtionality here.
+                  onPressed: () async{
+                    //Implement the Create Account funtionality here.
+                    await showGenericDialog(
+                      context: context, 
+                      title: enableLocationString,
+                      content: enableYourLocationString,
+                      buttonTitle: enableString
+                    );
                   },
                   title: createAccountString
                 ),
