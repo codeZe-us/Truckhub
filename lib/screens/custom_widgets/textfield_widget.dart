@@ -8,12 +8,14 @@ class GenericTextField extends StatefulWidget {
   final String hintText;
   final TextEditingController controller;
   final bool? showSuffixIcon;
+  final Widget? leadingWidget;
 
   const GenericTextField({
     super.key,
     required this.hintText,
     required this.controller,
-    this.showSuffixIcon
+    this.showSuffixIcon,
+    this.leadingWidget
   });
 
   @override
@@ -58,13 +60,14 @@ class _GenericTextFieldState extends State<GenericTextField> {
           icon: Icon(
             isVisible ? Icons.visibility_off_rounded : Icons.visibility_rounded
           )
-        ) : null
+        ) : null,
+        prefixIcon: widget.leadingWidget ?? const SizedBox.shrink(),
       ),
       style: const TextStyle().decorateTextStyle(
         color: blackColor.withOpacity(0.5),
         fontWeight: fontWeight4,
         fontSize: fontSize3
-      )
+      ),
     );
   }
 }

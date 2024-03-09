@@ -23,3 +23,6 @@ const enableString = 'Enable';
 const youAreOfflineString = "You're offline";
 const connectToInternetString = 'Turn on your data or connect to a wifi';
 const okString = 'Ok';
+const searchForDriversString = 'Search For Drivers...';
+const truckString = 'Truck';
+const hubString = 'Hub';

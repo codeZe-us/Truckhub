@@ -4,18 +4,20 @@ import 'package:truckhub/screens/constants/colors.dart';
 
 class GenericAnnotatedRegion extends StatelessWidget {
   final Widget child;
+  final bool? transparentStatusBar;
 
   const GenericAnnotatedRegion({
     super.key,
-    required this.child
+    required this.child,
+    this.transparentStatusBar
   });
 
   @override
   Widget build(BuildContext context) {
     return AnnotatedRegion<SystemUiOverlayStyle>(
-      value: const SystemUiOverlayStyle(
+      value: SystemUiOverlayStyle(
         systemNavigationBarColor: blackColor,
-        statusBarColor: whiteColor,
+        statusBarColor: transparentStatusBar ?? false ? transparentColor : whiteColor,
         statusBarIconBrightness: Brightness.dark,
         systemNavigationBarIconBrightness: Brightness.light
       ),
