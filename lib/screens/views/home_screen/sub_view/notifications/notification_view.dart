@@ -9,6 +9,7 @@ import 'package:truckhub/screens/custom_widgets/circle_avatar_widget.dart';
 import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/notifications/alert_dialog.dart';
+import 'package:truckhub/screens/views/home_screen/sub_view/notifications/snackbar_alert.dart';
 
 class NotificationsView extends StatelessWidget {
   const NotificationsView({super.key});
@@ -137,7 +138,9 @@ class NotificationsView extends StatelessWidget {
                             flex: 1,
                             child: GenericElevatedButton(
                               noMargin: true,
-                              onPressed: (){},
+                              onPressed: (){
+                                showConfirmationDialog(context: context);
+                              },
                               title: continueString
                             ),
                           )

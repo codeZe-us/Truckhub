@@ -53,3 +53,4 @@ const continueString = 'Continue';
 const cancelYouRideString = 'Sure you want to cancel your ride?';
 const yesString = 'Yes';
 const noString = 'No';
+const continuedString = 'Continued!';
