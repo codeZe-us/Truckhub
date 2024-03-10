@@ -6,7 +6,7 @@ import 'package:truckhub/screens/utils/extensions.dart';
 import 'package:truckhub/screens/views/confirm_phone_number/pincode_view.dart';
 import 'package:truckhub/screens/views/home_screen/main_home_screen.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/google_map_view.dart';
-import 'package:truckhub/screens/views/pickup_locaton_and_destination_search_view.dart';
+import 'package:truckhub/screens/views/pickup_location_destination/pickup_locaton_and_destination_search_view.dart';
 import 'package:truckhub/screens/views/welcome_back_screen.dart';
 import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
 

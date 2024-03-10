@@ -20,6 +20,7 @@ class WelcomeToTruckHubScreen extends StatefulWidget {
 class _WelcomeToTruckHubScreenState extends State<WelcomeToTruckHubScreen> {
   late TextEditingController phoneNumberController,
   passwordController, nameController;
+  bool isVisible = false;
 
   @override 
   void initState(){
@@ -83,7 +84,12 @@ class _WelcomeToTruckHubScreenState extends State<WelcomeToTruckHubScreen> {
                 ),
                 const Gap(20),
                 GenericTextField(
-                  showSuffixIcon: true,
+                  suffixIcon: IconButton(
+                    onPressed: () => setState(() => isVisible = !isVisible),
+                    icon: Icon(
+                      isVisible ? Icons.visibility_off_rounded : Icons.visibility_rounded
+                    )
+                  ),
                   hintText: passwordString,
                   controller: passwordController,
                 ),

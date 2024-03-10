@@ -21,6 +21,7 @@ class WelcomeBackScreen extends StatefulWidget {
 class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
   late TextEditingController phoneNumberController,
   passwordController;
+  bool isVisible = false;
 
   @override 
   void initState(){
@@ -70,7 +71,12 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
                 ),
                 const Gap(20),
                 GenericTextField(
-                  showSuffixIcon: true,
+                  suffixIcon: IconButton(
+                    onPressed: () => setState(() => isVisible = !isVisible),
+                    icon: Icon(
+                      isVisible ? Icons.visibility_off_rounded : Icons.visibility_rounded
+                    )
+                  ),
                   hintText: passwordString,
                   controller: passwordController,
                 ),
