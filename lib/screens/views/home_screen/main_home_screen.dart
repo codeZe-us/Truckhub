@@ -3,7 +3,7 @@ import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/views/home_screen/navigation_destinations.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/account_view.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/google_map_view.dart';
-import 'package:truckhub/screens/views/home_screen/sub_view/notifications_view.dart';
+import 'package:truckhub/screens/views/home_screen/sub_view/notifications/notification_view.dart';
 
 class MainHomeScreen extends StatefulWidget {
   const MainHomeScreen({super.key});

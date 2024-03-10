@@ -1,15 +1,16 @@
 import 'package:flutter/material.dart';
+import 'package:truckhub/screens/constants/colors.dart' show blackColor;
 import 'package:truckhub/screens/utils/extensions.dart';
 
 class GenericText extends StatelessWidget {
-  final Color color;
+  final Color? color;
   final double fontSize;
   final FontWeight fontWeight;
   final String text;
 
   const GenericText({
     super.key,
-    required this.color,
+    this.color,
     required this.fontSize,
     required this.fontWeight,
     required this.text
@@ -18,7 +19,7 @@ class GenericText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text).decorateText(
-      color: color,
+      color: color ?? blackColor,
       fontWeight: fontWeight,
       fontSize: fontSize
     );

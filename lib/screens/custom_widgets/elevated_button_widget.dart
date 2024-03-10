@@ -27,7 +27,7 @@ class GenericElevatedButton extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      width: MediaQuery.of(context).size.width,
+      //width: MediaQuery.of(context).size.width,
       height: 50,
       margin: noMargin ?? false ? null : const EdgeInsets.fromLTRB(50, 0, 50, 0),
       child: ElevatedButton(
