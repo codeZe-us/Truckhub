@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
 import 'package:truckhub/screens/utils/extensions.dart';
 
-class GenericAutoCompleteWidget extends StatelessWidget {
+class GenericAutoCompleteWidget extends StatefulWidget {
   final List<String> options;
   final String hintText;
   final Widget? leadingWidget, 
@@ -20,14 +21,23 @@ class GenericAutoCompleteWidget extends StatelessWidget {
   });
 
   @override
+  State<GenericAutoCompleteWidget> createState() => _GenericAutoCompleteWidgetState();
+}
+
+class _GenericAutoCompleteWidgetState extends State<GenericAutoCompleteWidget> {
+  bool showSuffixIcon = false;
+
+  @override
   Widget build(BuildContext context) {
     return Autocomplete<String>(
       optionsBuilder: (TextEditingValue textEditingValue) {
         if(textEditingValue.text.isEmpty){
+          setState(() => showSuffixIcon = false);
           return const Iterable.empty();
         }
         else{
-          final displayedOptions = options.where(
+          setState(() => showSuffixIcon = true);
+          final displayedOptions = widget.options.where(
             (option) => option.toLowerCase().contains(
               textEditingValue.text.toLowerCase()
             )
@@ -40,7 +50,7 @@ class GenericAutoCompleteWidget extends StatelessWidget {
       initialValue: null,
       optionsViewBuilder: (context, onSelected, options){
         return Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
+          crossAxisAlignment: CrossAxisAlignment.center,
           mainAxisSize: MainAxisSize.min,
           children: options.map(
             (option) => GestureDetector(
@@ -56,9 +66,12 @@ class GenericAutoCompleteWidget extends StatelessWidget {
       },
       fieldViewBuilder:(context, textEditingController, focusNode, onFieldSubmitted) {
         return GenericTextField(
-          suffixIcon: suffixIcon,
-          leadingWidget: leadingWidget,
-          hintText: hintText,
+          suffixIcon: showSuffixIcon ? IconButton(
+            onPressed: (){/*implement the functionality of this iconButton here*/},
+            icon: const FaIcon(FontAwesomeIcons.circleXmark)
+          ) : null,
+          leadingWidget: widget.leadingWidget,
+          hintText: widget.hintText,
           controller: textEditingController,
           focusNode: focusNode,
         );

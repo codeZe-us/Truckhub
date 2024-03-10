@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
@@ -30,6 +31,10 @@ class PickupLocationAndDestinationSearchScreen extends StatelessWidget {
             children: [
               const Gap(60),
               GenericAutoCompleteWidget(
+                leadingWidget: IconButton(
+                  onPressed: (){/*Implement the functionily of the icon here*/},
+                  icon: const FaIcon(FontAwesomeIcons.arrowLeftLong,)
+                ),
                 options: options, //Provide the options for the autocomplete
                 hintText:pickupLocationString
               ),
