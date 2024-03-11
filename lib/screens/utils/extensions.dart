@@ -7,7 +7,8 @@ extension ModifyText on Text{
     required Color color, 
     required FontWeight fontWeight,
     required double fontSize,
-    bool? controlOverflow
+    bool? controlOverflow, 
+    bool? noCenterAlign
   }) => Text(
     data ?? '', 
     style: GoogleFonts.getFont(
@@ -18,7 +19,7 @@ extension ModifyText on Text{
     ),
     overflow: controlOverflow ?? false ? TextOverflow.ellipsis : null,
     softWrap: true,
-    textAlign: TextAlign.center,
+    textAlign: noCenterAlign ?? false ? null : TextAlign.center,
   );
 }
 

@@ -6,6 +6,7 @@ import 'package:truckhub/screens/utils/extensions.dart';
 import 'package:truckhub/screens/views/confirm_phone_number/pincode_view.dart';
 import 'package:truckhub/screens/views/home_screen/main_home_screen.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/account_view/driver_profile.dart';
+import 'package:truckhub/screens/views/home_screen/sub_view/account_view/main_account_view.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/google_map_view.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/notifications/notification_view.dart';
 import 'package:truckhub/screens/views/pickup_location_destination/pickup_locaton_and_destination_search_view.dart';
@@ -43,7 +44,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const DriversProfileView()
+      home: const AccountView()
     );
   }
 }
