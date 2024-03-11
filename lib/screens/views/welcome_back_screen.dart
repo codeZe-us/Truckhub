@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
@@ -44,7 +45,7 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
         backgroundColor: whiteColor,
         appBar: AppBar(
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_rounded),
+            icon: const FaIcon(FontAwesomeIcons.arrowLeftLong),
             onPressed: (){
               //Implement the functionality of this IconButton here
             },

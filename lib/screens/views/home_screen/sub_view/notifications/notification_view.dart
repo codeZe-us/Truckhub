@@ -57,6 +57,7 @@ class NotificationsView extends StatelessWidget {
                   dense: true,
                   minLeadingWidth: 0,
                   leading: GenericCircleAvatar(
+                    radius: 40,
                     child: FaIcon(Icons.check, color: whiteColor,),
                   ),
                   title: Column(
@@ -95,6 +96,7 @@ class NotificationsView extends StatelessWidget {
                       dense: true,
                       minLeadingWidth: 0,
                       leading: GenericCircleAvatar(
+                        radius: 40,
                         child: FaIcon(
                           FontAwesomeIcons.truckPickup,
                           color: whiteColor,
@@ -166,6 +168,7 @@ class NotificationsView extends StatelessWidget {
                   dense: true,
                   minLeadingWidth: 0,
                   leading: GenericCircleAvatar(
+                    radius: 40,
                     child: FaIcon(
                       FontAwesomeIcons.star, 
                       color: whiteColor,
