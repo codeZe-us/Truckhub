@@ -44,6 +44,7 @@ dependencies:
   location: ^5.0.3
   svg_flutter: ^0.0.1
   font_awesome_flutter: ^10.7.0
+  flutter_hooks: ^0.20.5
 
 dev_dependencies:
   flutter_test:

@@ -28,7 +28,7 @@ class GenericTextField extends StatelessWidget {
       controller: controller,
       maxLines: 1,
       focusNode: focusNode,
-      autocorrect: true, 
+      // autocorrect: true, 
       cursorColor: blackColor,
       obscureText: obscureText ?? false ? true : false,             
       cursorWidth: 1,
@@ -59,7 +59,7 @@ class GenericTextField extends StatelessWidget {
       style: const TextStyle().decorateTextStyle(
         color: blackColor.withOpacity(0.5),
         fontWeight: fontWeight4,
-        fontSize: fontSize3
+        fontSize: fontSize3,
       ),
     );
   }

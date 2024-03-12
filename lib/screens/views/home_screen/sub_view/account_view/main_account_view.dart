@@ -86,7 +86,6 @@ class AccountView extends StatelessWidget {
                   context: context,
                   title: confirmDeleteAccountString
                 );
-                print(result);
               },
               child: const GenericText(
                 noCenterAlign: true,
