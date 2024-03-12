@@ -77,6 +77,7 @@ class AccountView extends StatelessWidget {
               title: reviewString
             ),
             GenericCardWidget(
+              showTermsAndPolicy: true,
               onTap: (){},
               title: termPrivacyString
             ),

@@ -45,7 +45,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const GetProfile()
+      home: const AccountView()
     );
   }
 }

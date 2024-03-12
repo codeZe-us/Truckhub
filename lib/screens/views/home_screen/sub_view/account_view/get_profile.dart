@@ -12,6 +12,7 @@ import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/icon_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
+import 'package:truckhub/screens/views/dialogs/snackbar_confirmation_dialog.dart';
 
 class GetProfile extends HookWidget {
   const GetProfile({super.key});
@@ -107,7 +108,12 @@ class GetProfile extends HookWidget {
               ),
               const Gap(60),
               GenericElevatedButton(
-                onPressed: (){},
+                onPressed: (){
+                  showConfirmationDialog(
+                    context: context,
+                    content: savedString
+                  );
+                },
                 title: saveString
               )
             ],

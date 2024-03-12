@@ -78,3 +78,12 @@ const phoneString = 'Phone number';
 const addressString = 'Address';
 const ninString = 'NIN/Voters card/ID card';
 const saveString = 'Save';
+const savedString = 'Saved!';
+const termsAndPolicyString = """
+At TruckHub, is accessible from TruckHub.com. One of our main priorities is the privacy of our visitors.
+This Privacy Policy document contains types of information that is collected and recorded by TruckHub
+and how we use it.If you have additional questions or require more information about our Policy, do not hesitate to contact us.
+This Privacy Policy applies only to our online activities and is valid for visitors to our website with
+regards to the information that they shared and/or collect in TruckHub. This policy is not applicable to
+any information collected offline or via channels other than this app.
+""";
