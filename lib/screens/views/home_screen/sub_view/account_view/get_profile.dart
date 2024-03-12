@@ -59,7 +59,7 @@ class GetProfile extends HookWidget {
                     bottom: 0,
                     left: screenWidth/2.1,
                     child: GenericIconButton(
-                      iconData: Icons.photo_camera_outlined,
+                      icon: const Icon(Icons.photo_camera_outlined,),
                       onPressed: (){},
                       color: greenColor.shade100,
                     ),
@@ -71,7 +71,7 @@ class GetProfile extends HookWidget {
                 children: [
                   const SizedBox.shrink(),
                   GenericIconButton(
-                    iconData: Icons.create_outlined,
+                    icon: const Icon(Icons.create_outlined,),
                     onPressed: (){},
                   ),
                 ],
@@ -101,7 +101,7 @@ class GetProfile extends HookWidget {
                 hintText: ninString,
                 controller: ninController,
                 suffixIcon: GenericIconButton(
-                  iconData: Icons.photo_camera_outlined,
+                  icon: const Icon(Icons.photo_camera_outlined),
                   onPressed: (){},
                 ),
               ),

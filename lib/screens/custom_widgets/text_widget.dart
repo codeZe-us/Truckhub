@@ -7,12 +7,13 @@ class GenericText extends StatelessWidget {
   final double fontSize;
   final FontWeight fontWeight;
   final String text;
-  final bool? noCenterAlign;
+  final bool? noCenterAlign, controlOverflow;
 
   const GenericText({
     super.key,
     this.color,
     this.noCenterAlign,
+    this.controlOverflow,
     required this.fontSize,
     required this.fontWeight,
     required this.text
@@ -21,6 +22,7 @@ class GenericText extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Text(text).decorateText(
+      controlOverflow: controlOverflow,
       noCenterAlign: noCenterAlign,
       color: color ?? blackColor,
       fontWeight: fontWeight,

@@ -40,8 +40,8 @@ class DriversProfileView extends StatelessWidget {
                   child: SizedBox.shrink()
                 ),
                 const Gap(10),
-                const GenericText(
-                  text: driverNameString,
+                GenericText(
+                  text: driver1NameString.toUpperCase(),
                   fontSize: fontSize3,
                   fontWeight: fontWeight6,
                 ),

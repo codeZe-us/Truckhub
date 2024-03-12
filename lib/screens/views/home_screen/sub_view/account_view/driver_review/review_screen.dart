@@ -6,7 +6,6 @@ import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
-import 'package:truckhub/screens/views/home_screen/sub_view/account_view/custom_card_widget.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/account_view/driver_review/review_subtitle.dart';
 
 class DriverReviewScreen extends StatefulWidget {

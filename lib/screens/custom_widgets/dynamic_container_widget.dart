@@ -25,7 +25,7 @@ class DynamicContainer extends StatelessWidget {
     return ClipRect(
       clipBehavior: Clip.hardEdge,
       child: Container(
-        padding: const EdgeInsets.fromLTRB(10, 0, 10, 0),
+        padding: padding ?? const  EdgeInsets.fromLTRB(10, 0, 10, 0),
         constraints: BoxConstraints(
           maxHeight: screenHeight,
           minHeight: 0,

@@ -1,14 +1,13 @@
 import 'package:flutter/material.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 
 class GenericIconButton extends StatelessWidget {
-  final IconData iconData;
+  final Widget icon;
   final Color? color;
   final void Function() onPressed;
 
   const GenericIconButton({
     super.key,
-    required this.iconData,
+    required this.icon,
     required this.onPressed,
     this.color
   });
@@ -17,9 +16,7 @@ class GenericIconButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return IconButton(
       onPressed: onPressed,
-      icon: FaIcon(
-        iconData,
-      ),
+      icon: icon,
       style: ButtonStyle(
         backgroundColor: MaterialStatePropertyAll(color)
       ),

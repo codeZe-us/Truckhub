@@ -46,15 +46,18 @@ class _DriverReviewSubtitleState extends State<DriverReviewSubtitle> {
         Row(
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           children: [
-            GenericText(
+            const GenericText(
               noCenterAlign: true,
               fontSize: fontSize3half,
               fontWeight: fontWeight7,
-              text: driverNameString.toLowerCase(),
+              text: driver1NameString,
             ),
             GenericIconButton(
-              iconData: showHiddenPart ? Icons.keyboard_arrow_up_sharp
-              : Icons.keyboard_arrow_down_outlined,
+              icon: Visibility(
+                visible: showHiddenPart,
+                replacement: const Icon(Icons.keyboard_arrow_up_outlined),
+                child: const Icon(Icons.keyboard_arrow_down_outlined)
+              ),
               onPressed: () => setState(() => showHiddenPart = !showHiddenPart)
             ),
           ],

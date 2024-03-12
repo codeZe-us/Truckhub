@@ -5,12 +5,21 @@ import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/constants/strings.dart';
+import 'package:truckhub/screens/custom_widgets/dynamic_container_widget.dart';
+import 'package:truckhub/screens/custom_widgets/icon_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/views/dialogs/yes_or_no_dialog.dart';
-import 'package:truckhub/screens/views/home_screen/sub_view/account_view/custom_card_widget.dart';
+import 'package:truckhub/screens/custom_widgets/custom_card_widget.dart';
 
-class AccountView extends StatelessWidget {
+class AccountView extends StatefulWidget {
   const AccountView({super.key});
+
+  @override
+  State<AccountView> createState() => _AccountViewState();
+}
+
+class _AccountViewState extends State<AccountView> {
+  bool showHiddenPart = false;
 
   @override
   Widget build(BuildContext context) {
@@ -68,24 +77,54 @@ class AccountView extends StatelessWidget {
         padding: const EdgeInsets.all(15),
         child: ListView(
           children: [
-            GenericCardWidget(
+            GenericCardWidgetWithTrailingIcon(
               onTap: (){},
               title: bookedString
             ),
-            GenericCardWidget(
+            GenericCardWidgetWithTrailingIcon(
               onTap: (){},
               title: reviewString
             ),
-            GenericCardWidget(
-              subtitle: const GenericText(
-                noCenterAlign: true,
-                text: termsAndPolicyString,
-                fontSize: fontSize3,
-                fontWeight: fontWeight3,
-              ),
-              onTap: (){},
-              title: termPrivacyString
+            
+            //During implementation of this project, the state of this widget can be managed, 
+            //setState removed, and root widget converted to stateless
+            DynamicContainer(
+              padding: const EdgeInsets.fromLTRB(10, 5, 20, 5),
+              addBorder: true,
+              children: [
+                Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                  children: [
+                    const GenericText(
+                      noCenterAlign: true,
+                      text: termsPrivacyString,
+                      fontSize: fontSize3half,
+                      fontWeight: fontWeight7,
+                    ),
+                    GenericIconButton(
+                      icon: Visibility(
+                        visible: showHiddenPart,
+                        replacement: const Icon(Icons.keyboard_arrow_up_outlined),
+                        child: const Icon(Icons.keyboard_arrow_down_outlined)
+                      ),
+                      onPressed: (){
+                        setState(() => showHiddenPart = !showHiddenPart);
+                      }
+                    ),
+                  ],
+                ),
+                Visibility(
+                  visible: showHiddenPart,
+                  child: const GenericText(
+                    noCenterAlign: true,
+                    text: termsAndPolicyString,
+                    fontSize: fontSize3,
+                    fontWeight: fontWeight3,
+                  ),
+                ),
+              ]
             ),
+            const Gap(10),
             GestureDetector(
               onTap: () async{
                 final result = await showYesOrNoAlertDialog(
@@ -117,7 +156,7 @@ class AccountView extends StatelessWidget {
               ),
             ),
           ],
-        ),
+        )
       )
     );
   }
