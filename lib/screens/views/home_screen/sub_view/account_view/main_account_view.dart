@@ -1,5 +1,4 @@
 import 'package:flutter/material.dart';
-import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
@@ -7,6 +6,7 @@ import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
+import 'package:truckhub/screens/views/dialogs/yes_or_no_dialog.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/account_view/custom_card_widget.dart';
 
 class AccountView extends StatelessWidget {
@@ -81,7 +81,13 @@ class AccountView extends StatelessWidget {
               title: termPrivacyString
             ),
             GestureDetector(
-              onTap: (){},
+              onTap: () async{
+                final result = await showYesOrNoAlertDialog(
+                  context: context,
+                  title: confirmDeleteAccountString
+                );
+                print(result);
+              },
               child: const GenericText(
                 noCenterAlign: true,
                 color: redColor,
@@ -92,7 +98,12 @@ class AccountView extends StatelessWidget {
             ),
             const Gap(100),
             GestureDetector(
-              onTap: (){},
+              onTap: () async{
+                final result = await showYesOrNoAlertDialog(
+                  context: context,
+                  title: confirmLogOutString
+                );
+              },
               child: const GenericText(
                 color: greenColor,
                 text: logOutString,

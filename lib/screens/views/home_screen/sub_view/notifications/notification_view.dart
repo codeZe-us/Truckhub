@@ -8,8 +8,8 @@ import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/circle_avatar_widget.dart';
 import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
-import 'package:truckhub/screens/views/home_screen/sub_view/notifications/alert_dialog.dart';
-import 'package:truckhub/screens/views/home_screen/sub_view/notifications/snackbar_alert.dart';
+import 'package:truckhub/screens/views/dialogs/yes_or_no_dialog.dart';
+import 'package:truckhub/screens/views/dialogs/snackbar_confirmation_dialog.dart';
 
 class NotificationsView extends StatelessWidget {
   const NotificationsView({super.key});
@@ -130,7 +130,10 @@ class NotificationsView extends StatelessWidget {
                               backgroundColor: whiteColor,
                               color: blackColor,
                               onPressed: (){
-                                showCancelYouRideDialog(context: context);
+                                showYesOrNoAlertDialog(
+                                  context: context,
+                                  title: cancelYourRideString
+                                );
                               },
                               title: cancelString
                             ),
@@ -141,7 +144,10 @@ class NotificationsView extends StatelessWidget {
                             child: GenericElevatedButton(
                               noMargin: true,
                               onPressed: (){
-                                showConfirmationDialog(context: context);
+                                showConfirmationDialog(
+                                  context: context,
+                                  content: continueString
+                                );
                               },
                               title: continueString
                             ),

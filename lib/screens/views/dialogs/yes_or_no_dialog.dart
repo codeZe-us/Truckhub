@@ -7,16 +7,17 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textbutton_widget.dart';
 
 
-Future<bool?> showCancelYouRideDialog<bool>({
+Future<bool?> showYesOrNoAlertDialog<bool>({
   required BuildContext context,
-}) => showDialog(
+  required String title
+}) => showDialog<bool?>(
   context: context,
   builder: (_) => AlertDialog(
     titlePadding: const EdgeInsets.fromLTRB(0, 15, 0, 10),
     actionsAlignment: MainAxisAlignment.spaceAround,
-    title: const Center(
+    title: Center(
       child: GenericText(
-        text: cancelYouRideString,
+        text: title,
         color: blackColor,
         fontWeight: fontWeight6, 
         fontSize: fontSize3, 
@@ -26,13 +27,13 @@ Future<bool?> showCancelYouRideDialog<bool>({
       GenericTextButton(
         fontSize: fontSize3,
         fontWeight: fontWeight7,
-        onTap: (){},
+        onTap: () => Navigator.pop(context, false),
         title: noString
       ),
       GenericTextButton(
         fontSize: fontSize3,
         fontWeight: fontWeight7,
-        onTap: (){},
+        onTap: ()=> Navigator.pop(context, false),
         title: yesString
       )
     ],
