@@ -32,7 +32,6 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
   @override
   Widget build(BuildContext context) {
     return GenericAnnotatedRegion(
-      transparentStatusBar: true,
       child: Scaffold(
         body: PageView(
           physics: const NeverScrollableScrollPhysics(),
@@ -60,7 +59,6 @@ class _MainHomeScreenState extends State<MainHomeScreen> {
               curve: Curves.easeIn
             );
           },
-          
         ),
       ),
     );

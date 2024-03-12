@@ -1,19 +1,19 @@
 import 'package:flutter/material.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
-import 'package:truckhub/screens/constants/strings.dart';
+import 'package:truckhub/screens/custom_widgets/icon_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 
 class GenericCardWidget extends StatefulWidget {
-  final void Function()? onTap;
+  final void Function() onTap;
   final String title;
-  final bool? showTermsAndPolicy;
+  final Widget? subtitle;
 
   const GenericCardWidget({
     super.key,
     required this.onTap,
     required this.title,
-    this.showTermsAndPolicy
+    this.subtitle
   });
 
   @override
@@ -21,20 +21,20 @@ class GenericCardWidget extends StatefulWidget {
 }
 
 class _GenericCardWidgetState extends State<GenericCardWidget> {
-  bool changeIcon = true;
+  bool showHiddenPart = false;
 
   @override
   Widget build(BuildContext context) {
     return Card.outlined(
       margin: const EdgeInsets.only(bottom: 15),
       child: ListTile(
-        onTap: (){
-          setState(() => changeIcon = !changeIcon);
-          widget.onTap;
-        },
-        trailing: Icon(
-          changeIcon ? Icons.keyboard_arrow_right_sharp
-          : Icons.keyboard_arrow_up_outlined
+        trailing: GenericIconButton(
+          iconData: showHiddenPart ? Icons.keyboard_arrow_up_sharp
+          : Icons.keyboard_arrow_down_outlined,
+          onPressed: (){
+            setState(() => showHiddenPart = !showHiddenPart);
+            widget.onTap;
+          }
         ),
         title: GenericText(
           noCenterAlign: true,
@@ -42,12 +42,7 @@ class _GenericCardWidgetState extends State<GenericCardWidget> {
           fontWeight: fontWeight7,
           text: widget.title
         ),
-        subtitle: (widget.showTermsAndPolicy ?? false)  && !changeIcon ? const GenericText(
-          noCenterAlign: true,
-          text: termsAndPolicyString,
-          fontSize: fontSize3,
-          fontWeight: fontWeight3,
-        ) : null,
+        subtitle: showHiddenPart ? widget.subtitle : null
       ),
     );
   }

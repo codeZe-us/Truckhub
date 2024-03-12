@@ -27,7 +27,6 @@ class GetProfile extends HookWidget {
     final ninController = useTextEditingController();
 
     return GenericAnnotatedRegion(
-      transparentStatusBar: true,
       child: Scaffold(
         appBar: AppBar(
           leading: IconButton(

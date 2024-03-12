@@ -25,6 +25,7 @@ class GenericTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return TextField(
+      //expands: true,
       controller: controller,
       maxLines: 1,
       focusNode: focusNode,
@@ -55,12 +56,61 @@ class GenericTextField extends StatelessWidget {
         label: Text(hintText),
         suffixIcon: suffixIcon,
         prefixIcon: leadingWidget ?? const SizedBox.shrink(),
+
       ),
       style: const TextStyle().decorateTextStyle(
         color: blackColor.withOpacity(0.5),
-        fontWeight: fontWeight4,
+        fontWeight: fontWeight5,
         fontSize: fontSize3,
       ),
+    );
+  }
+}
+
+
+
+class GenericTextField2 extends StatelessWidget {
+  final String hintText;
+  final TextEditingController controller;
+  final EdgeInsetsGeometry padding;
+
+  const GenericTextField2({
+    super.key,
+    required this.hintText,
+    required this.controller,
+    required this.padding
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return TextField(
+      controller: controller,
+      maxLines: null,
+      cursorColor: blackColor,             
+      cursorWidth: 1,
+      decoration: InputDecoration(
+        hintText: hintText,
+        
+        border: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: greenColor
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderSide: const BorderSide(
+            color: greenColor
+          ),
+          borderRadius: BorderRadius.circular(10),
+        ),
+        contentPadding: padding
+      ),
+      style: const TextStyle().decorateTextStyle(
+        color: blackColor.withOpacity(0.5),
+        fontWeight: fontWeight5,
+        fontSize: fontSize3,
+      ),
+
     );
   }
 }

@@ -70,7 +70,6 @@ class _GoogleMapViewState extends State<GoogleMapView> {
   @override
   Widget build(BuildContext context) {
     return GenericAnnotatedRegion(
-      transparentStatusBar: true,
       child: Scaffold(
         extendBodyBehindAppBar: true,
         extendBody: true,

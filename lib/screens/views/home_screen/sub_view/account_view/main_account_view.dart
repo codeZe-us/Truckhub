@@ -77,7 +77,12 @@ class AccountView extends StatelessWidget {
               title: reviewString
             ),
             GenericCardWidget(
-              showTermsAndPolicy: true,
+              subtitle: const GenericText(
+                noCenterAlign: true,
+                text: termsAndPolicyString,
+                fontSize: fontSize3,
+                fontWeight: fontWeight3,
+              ),
               onTap: (){},
               title: termPrivacyString
             ),

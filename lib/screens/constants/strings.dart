@@ -79,6 +79,10 @@ const addressString = 'Address';
 const ninString = 'NIN/Voters card/ID card';
 const saveString = 'Save';
 const savedString = 'Saved!';
+const rideWithDriverString = 'How was your ride with driver?';
+const rateString = 'Rate';
+const yourNameString = 'Your name';
+const userExperienceString = 'What was your experience with this rider';
 const termsAndPolicyString = """
 At TruckHub, is accessible from TruckHub.com. One of our main priorities is the privacy of our visitors.
 This Privacy Policy document contains types of information that is collected and recorded by TruckHub

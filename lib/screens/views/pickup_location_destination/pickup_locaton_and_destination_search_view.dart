@@ -21,7 +21,6 @@ class PickupLocationAndDestinationSearchScreen extends StatelessWidget {
   ];
 
     return GenericAnnotatedRegion(
-      transparentStatusBar: true,
       child: Scaffold(
         body: Padding(
           padding: const EdgeInsets.all(20),
