@@ -112,7 +112,7 @@ class _GenericCardWidgetWithTrailingTextState extends State<GenericCardWidgetWit
         ),
         subtitle: GenericText(
           noCenterAlign: true,
-          fontSize: fontSize3,
+          fontSize: fontSize2half,
           fontWeight: fontWeight3,
           text: widget.subtitle
         ),

@@ -50,6 +50,8 @@ const ifeanyiString = 'Ifeanyichukwu Ifedili has responded your ride';
 const riderString = 'Rider';
 const cancelString = 'Cancel';
 const continueString = 'Continue';
+const findAtruckString = 'Find a truck';
+const earnAsDriverString = 'Earn as a driver';
 const cancelYourRideString = 'Sure you want to cancel your ride?';
 const yesString = 'Yes';
 const noString = 'No';
@@ -89,6 +91,7 @@ const ogigeMarketString = 'Ogige market close to peace park';
 const enuguRoadString = 'Enugu road before cathedral church';
 const driver2NameString = 'Mathew Ike';
 const driver3NameString = 'Chike Chukwudi';
+const introString = 'Embark on a seamless journey of finding reliable truck drivers for your transportation nedds';
 const userExperienceString = 'What was your experience with this rider';
 const termsAndPolicyString = """
 At TruckHub, is accessible from TruckHub.com. One of our main priorities is the privacy of our visitors.

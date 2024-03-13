@@ -12,6 +12,7 @@ import 'package:truckhub/screens/views/home_screen/sub_view/account_view/get_pro
 import 'package:truckhub/screens/views/home_screen/sub_view/account_view/main_account_view.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/google_map_view.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/notifications/notification_view.dart';
+import 'package:truckhub/screens/views/landing_page_screen.dart';
 import 'package:truckhub/screens/views/pickup_location_destination/pickup_locaton_and_destination_search_view.dart';
 import 'package:truckhub/screens/views/welcome_back_screen.dart';
 import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
@@ -46,7 +47,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const BookedDriversScreen()
+      home: const LandingPageScreen()
     );
   }
 }
