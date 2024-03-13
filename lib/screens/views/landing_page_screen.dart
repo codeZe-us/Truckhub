@@ -30,12 +30,15 @@ class LandingPageScreen extends StatelessWidget {
               fit: BoxFit.cover
             )
           ),
-          child: const GenericText(
-            noCenterAlign: true,
-            color: whiteColor,
-            fontSize: fontSize2half,
-            fontWeight: fontWeight5,
-            text: introString,
+          child: const Padding(
+            padding: EdgeInsets.all(15),
+            child: GenericText(
+              noCenterAlign: true,
+              color: whiteColor,
+              fontSize: fontSize2half,
+              fontWeight: fontWeight5,
+              text: introString,
+            ),
           ),
         ),
         bottomSheet: BottomSheet(
