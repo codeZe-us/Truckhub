@@ -39,7 +39,7 @@ class RichTextWidget extends StatelessWidget {
                 text: child as String
               ).decorateTextSpan(
                 color: blackColor,
-                fontWeight: fontWeight2,
+                fontWeight: fontWeight3,
                 fontSize: fontSize3
               );
             }

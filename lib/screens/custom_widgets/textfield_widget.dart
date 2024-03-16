@@ -16,22 +16,21 @@ class GenericTextField extends StatelessWidget {
     super.key,
     required this.hintText,
     required this.controller,
-    this.obscureText,
     this.leadingWidget,
+    this.obscureText,
     this.suffixIcon,
     this.focusNode,
   });
 
   @override
   Widget build(BuildContext context) {
+
     return TextField(
-      //expands: true,
       controller: controller,
       maxLines: 1,
       focusNode: focusNode,
-      // autocorrect: true, 
       cursorColor: blackColor,
-      obscureText: obscureText ?? false ? true : false,             
+      obscureText: obscureText ?? false,
       cursorWidth: 1,
       decoration: InputDecoration(
         contentPadding: const EdgeInsets.fromLTRB(20, 10, 20, 10),
@@ -39,8 +38,14 @@ class GenericTextField extends StatelessWidget {
         labelStyle: const TextStyle().decorateTextStyle(
           color: blackColor.withOpacity(0.5),
           fontWeight: fontWeight4,
-          fontSize: fontSize3
+          fontSize: fontSize3half
         ),
+        floatingLabelStyle: const TextStyle().decorateTextStyle(
+          color: blackColor.withOpacity(0.6),
+          fontWeight: fontWeight4,
+          fontSize: fontSize4
+        ),
+        
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: greenColor
@@ -55,13 +60,13 @@ class GenericTextField extends StatelessWidget {
         ),
         label: Text(hintText),
         suffixIcon: suffixIcon,
-        prefixIcon: leadingWidget ?? const SizedBox.shrink(),
+        //prefixIcon: leadingWidget ?? const SizedBox.shrink(),
 
       ),
       style: const TextStyle().decorateTextStyle(
-        color: blackColor.withOpacity(0.5),
+        color: blackColor.withOpacity(0.7),
         fontWeight: fontWeight5,
-        fontSize: fontSize3,
+        fontSize: fontSize3half,
       ),
     );
   }

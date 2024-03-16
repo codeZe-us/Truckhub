@@ -26,7 +26,7 @@ class GenericTextButton extends StatelessWidget {
       onTap: onTap,
       child: GenericText(
         color: color ?? greenColor,
-        fontSize: fontSize ?? fontSize2,
+        fontSize: fontSize ?? fontSize2half,
         fontWeight: fontWeight ?? fontWeight7,
         text: title
       ),

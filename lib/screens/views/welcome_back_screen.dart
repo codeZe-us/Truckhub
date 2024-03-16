@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
@@ -53,61 +54,65 @@ class _WelcomeBackScreenState extends State<WelcomeBackScreen> {
         ),
         body: Padding(
           padding: const EdgeInsets.all(20.0),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const Gap(10),
-                const GenericText(
+          child: ListView(
+            // crossAxisAlignment: CrossAxisAlignment.stretch,
+            // mainAxisSize: MainAxisSize.min,
+            children: [
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: GenericText(
                   color: blackColor,
-                  fontSize: fontSize4,
-                  fontWeight: fontWeight6,
+                  fontSize: fontSize4half,
+                  fontWeight: fontWeight7,
                   text: welcomeBackString,
                 ),
-                const Gap(15),
-                GenericTextField(
-                  hintText: phoneNumberString,
-                  controller: phoneNumberController,
+              ),
+              const Gap(15),
+              GenericTextField(
+                hintText: phoneNumberString,
+                controller: phoneNumberController,
+              ),
+              const Gap(20),
+              GenericTextField(
+                obscureText: !isVisible,
+                suffixIcon: IconButton(
+                  onPressed: () => setState(() => isVisible = !isVisible),
+                  icon: Icon(
+                    isVisible ? Icons.visibility_off_rounded : Icons.visibility_rounded
+                  )
                 ),
-                const Gap(20),
-                GenericTextField(
-                  suffixIcon: IconButton(
-                    onPressed: () => setState(() => isVisible = !isVisible),
-                    icon: Icon(
-                      isVisible ? Icons.visibility_off_rounded : Icons.visibility_rounded
-                    )
-                  ),
-                  hintText: passwordString,
-                  controller: passwordController,
-                ),
-                const Gap(5),
-                GenericTextButton(
+                hintText: passwordString,
+                controller: passwordController,
+              ),
+              const Gap(5),
+              Align(
+                alignment: Alignment.centerLeft,
+                child: GenericTextButton(
                   onTap: (){
                     //Implement the funtionality of this TextButton here
                   },
                   title: forgotPasswordString
                 ),
-                const Gap(40),
-                GenericElevatedButton(
-                  onPressed: (){
-                    //Implement the Log in funtionality here.
-                  },
-                  title: logInString
-                ),
-                const Gap(50),
-                RichTextWidget(
-                  children: [
-                    dontHaveAccountString,
-                    [
-                      createAnAccountString,
-                      greenColor,
-                      (){/*Send the user to the create account screen*/},
-                    ]
-                  ],
-                )
-              ],
-            ),
+              ),
+              const Gap(40),
+              GenericElevatedButton(
+                onPressed: (){
+                  //Implement the Log in funtionality here.
+                },
+                title: logInString
+              ),
+              const Gap(50),
+              RichTextWidget(
+                children: [
+                  dontHaveAccountString,
+                  [
+                    createAnAccountString,
+                    greenColor,
+                    (){/*Send the user to the create account screen*/},
+                  ]
+                ],
+              )
+            ],
           ),
         )
       ),
