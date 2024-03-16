@@ -32,7 +32,7 @@ class LandingPageScreen extends StatelessWidget {
             )
           ),
           child: Padding(
-            padding: const EdgeInsets.all(15),
+            padding: const EdgeInsets.all(20),
             child: Column(
               mainAxisSize: MainAxisSize.min,
               crossAxisAlignment: CrossAxisAlignment.start,
@@ -40,11 +40,11 @@ class LandingPageScreen extends StatelessWidget {
                 const GenericText(
                   noCenterAlign: true,
                   color: whiteColor,
-                  fontSize: fontSize2half,
+                  fontSize: fontSize3,
                   fontWeight: fontWeight5,
                   text: introString,
                 ),
-                const Gap(8),
+                const Gap(10),
                 DotsIndicator(
                   dotsCount: 3,
                   decorator: DotsDecorator(
