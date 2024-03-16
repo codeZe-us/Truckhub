@@ -1,3 +1,4 @@
+import 'package:dots_indicator/dots_indicator.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
@@ -30,17 +31,43 @@ class LandingPageScreen extends StatelessWidget {
               fit: BoxFit.cover
             )
           ),
-          child: const Padding(
-            padding: EdgeInsets.all(15),
-            child: GenericText(
-              noCenterAlign: true,
-              color: whiteColor,
-              fontSize: fontSize2half,
-              fontWeight: fontWeight5,
-              text: introString,
+          child: Padding(
+            padding: const EdgeInsets.all(15),
+            child: Column(
+              mainAxisSize: MainAxisSize.min,
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+                const GenericText(
+                  noCenterAlign: true,
+                  color: whiteColor,
+                  fontSize: fontSize2half,
+                  fontWeight: fontWeight5,
+                  text: introString,
+                ),
+                const Gap(8),
+                DotsIndicator(
+                  dotsCount: 3,
+                  decorator: DotsDecorator(
+                    activeColor: whiteColor,
+                    activeShape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5)
+                    ),
+                    activeSize: const Size(20, 8),
+                    color: blackColor,
+                    shape: RoundedRectangleBorder(
+                      borderRadius: BorderRadius.circular(5),
+                      side: BorderSide(
+                        color: whiteColor.withAlpha(200),
+                        width: 1
+                      )
+                    )
+                  ),
+                )
+              ],
             ),
           ),
         ),
+
         bottomSheet: BottomSheet(
           constraints: BoxConstraints(
             maxHeight: screenHeight * 0.3,
