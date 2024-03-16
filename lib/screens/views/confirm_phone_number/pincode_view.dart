@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
@@ -20,7 +21,7 @@ class ConfirmPhoneNumberScreen extends StatelessWidget {
         backgroundColor: whiteColor,
         appBar: AppBar(
           leading: IconButton(
-            icon: const Icon(Icons.arrow_back_rounded),
+            icon: const FaIcon(FontAwesomeIcons.arrowLeftLong),
             onPressed: (){
               //Implement the functionality of this IconButton here
             },
@@ -29,38 +30,40 @@ class ConfirmPhoneNumberScreen extends StatelessWidget {
 
         body: Padding(
           padding: const EdgeInsets.all(20),
-          child: SingleChildScrollView(
-            child: Column(
-              crossAxisAlignment: CrossAxisAlignment.start,
-              mainAxisSize: MainAxisSize.min,
-              children: [
-                const GenericText(
+          child: ListView(
+            children: [
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: GenericText(
                   color: blackColor,
-                  fontSize: fontSize4,
-                  fontWeight: fontWeight6,
+                  fontSize: fontSize4half,
+                  fontWeight: fontWeight7,
                   text: confirmYourPhoneNumberString
                 ),
-                const Gap(5),
-                const GenericText(
+              ),
+              const Gap(5),
+              const Align(
+                alignment: Alignment.centerLeft,
+                child: GenericText(
                   color: blackColor,
                   fontSize: fontSize3,
-                  fontWeight: fontWeight3,
+                  fontWeight: fontWeight4,
                   text: codeSentToYouString
                 ),
-                const Gap(20),
-                const PinCodeFields(),
-                const Gap(40),
-                GenericElevatedButton(
-                  onPressed: (){
-                    //Implement the confirm functionality here.
-                  },
-                  fontWeight: fontWeight7,
-                  title: confirmString
-                ), 
-                const Gap(50),
-                const CountDownTimerView()
-              ]
-            )
+              ),
+              const Gap(20),
+              const PinCodeFields(),
+              const Gap(40),
+              GenericElevatedButton(
+                onPressed: (){
+                  //Implement the confirm functionality here.
+                },
+                fontWeight: fontWeight7,
+                title: confirmString
+              ), 
+              const Gap(50),
+              const CountDownTimerView()
+            ]
           ),
         )
       )

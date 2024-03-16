@@ -60,7 +60,7 @@ class GenericTextField extends StatelessWidget {
         ),
         label: Text(hintText),
         suffixIcon: suffixIcon,
-        //prefixIcon: leadingWidget ?? const SizedBox.shrink(),
+        prefixIcon: leadingWidget
 
       ),
       style: const TextStyle().decorateTextStyle(
