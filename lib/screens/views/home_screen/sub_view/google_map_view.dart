@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:google_maps_flutter/google_maps_flutter.dart';
 import 'package:location/location.dart';
 import 'package:truckhub/screens/constants/colors.dart';
@@ -93,25 +94,30 @@ class _GoogleMapViewState extends State<GoogleMapView> {
                 child: GenericTextField(
                   hintText: searchForDriversString,
                   controller: controller,
-                  leadingWidget: const Padding(
-                    padding: EdgeInsets.only(left: 15, right: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GenericText(
-                          color: blackColor,
-                          fontSize: fontSize3,
-                          fontWeight: fontWeight7,
-                          text: truckString
-                        ),
-                        GenericText(
-                          color: greenColor,
-                          fontSize: fontSize3,
-                          fontWeight: fontWeight7,
-                          text: hubString
-                        )
-                      ],
+                  leadingWidget: Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 10),
+                    child: GestureDetector(
+                      onTap: (){
+                        
+                      },
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          GenericText(
+                            color: blackColor,
+                            fontSize: fontSize3,
+                            fontWeight: fontWeight7,
+                            text: truckString
+                          ),
+                          GenericText(
+                            color: greenColor,
+                            fontSize: fontSize3,
+                            fontWeight: fontWeight7,
+                            text: hubString
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

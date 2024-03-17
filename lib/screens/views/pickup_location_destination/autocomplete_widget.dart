@@ -70,7 +70,7 @@ class _GenericAutoCompleteWidget3State extends State<GenericAutoCompleteWidget> 
           hintText: widget.hintText, 
           controller: controller,
           focusNode: focusNode,
-          leadingWidget: widget.leadingWidget,
+          leadingWidget: !showSuffixIcon ? widget.leadingWidget : null,
           suffixIcon: showSuffixIcon ? widget.suffixIcon : null,
         );
       },
