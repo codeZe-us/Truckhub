@@ -43,9 +43,8 @@ class GenericTextField extends StatelessWidget {
         floatingLabelStyle: const TextStyle().decorateTextStyle(
           color: blackColor.withOpacity(0.6),
           fontWeight: fontWeight4,
-          fontSize: fontSize4
+          fontSize: fontSize4,
         ),
-        
         focusedBorder: OutlineInputBorder(
           borderSide: const BorderSide(
             color: greenColor
@@ -61,7 +60,6 @@ class GenericTextField extends StatelessWidget {
         label: Text(hintText),
         suffixIcon: suffixIcon,
         prefixIcon: leadingWidget
-
       ),
       style: const TextStyle().decorateTextStyle(
         color: blackColor.withOpacity(0.7),

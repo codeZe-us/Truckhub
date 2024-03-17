@@ -10,7 +10,7 @@ extension ModifyText on Text{
     bool? controlOverflow, 
     bool? noCenterAlign
   }) => Text(
-    data ?? '', 
+    data ?? emptyString, 
     style: GoogleFonts.getFont(
       nunitoFont,
       fontSize: fontSize,

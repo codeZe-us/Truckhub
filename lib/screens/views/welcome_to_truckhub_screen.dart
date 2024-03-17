@@ -86,7 +86,7 @@ class _WelcomeToTruckHubScreenState extends State<WelcomeToTruckHubScreen> {
                 hintText: phoneNumberString,
                 controller: phoneNumberController,
               ),
-              const Gap(20),
+              const Gap(15),
               GenericTextField(
                 obscureText: !isVisible,
                 suffixIcon: IconButton(
