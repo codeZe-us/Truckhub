@@ -145,14 +145,21 @@ class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
     return Card(
       elevation: 0,
       child: ListTile(
-        leading: SvgPicture.asset(
-          thirdSvg,
-          fit: BoxFit.contain,
-          width: 40,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20)
         ),
-        selectedTileColor: greenColor.shade200,
+        minLeadingWidth: 0,
+        leading: SvgPicture.asset(
+          truckHubSvg,
+          fit: BoxFit.contain,
+          width: 80,
+        ),
+        selectedTileColor: greenColor,
+        dense: true,
+        selectedColor: greenColor,
         onTap: onTap,
         title: GenericText(
+          noCenterAlign: true,
           fontSize: fontSize3half,
           fontWeight: fontWeight7,
           text: title
@@ -175,7 +182,7 @@ class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
             ),
           ],
         ),
-
+      
       )
     );
   }

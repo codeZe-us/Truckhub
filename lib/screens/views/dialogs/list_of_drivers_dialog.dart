@@ -44,10 +44,9 @@ Future showListOfAvailableDrivers({
 }
 
 
-showA({
+Future<void> showA({
   required BuildContext context
-}){
-  showModalBottomSheet(
+}) => showModalBottomSheet<void>(
     backgroundColor: whiteColor,
     context: context,
     builder:(context) {
@@ -55,15 +54,19 @@ showA({
         padding: const EdgeInsets.all(10),
         child: ListView(
           children: [
-            const Gap(20),
+            const Gap(10),
             const Align(
               alignment: Alignment.centerLeft,
-              child: GenericText(
-                fontSize: fontSize3half,
-                fontWeight: fontWeight6,
-                text: listOfDriversString
+              child: Padding(
+                padding: EdgeInsets.only(left: 10),
+                child: GenericText(
+                  fontSize: fontSize3half,
+                  fontWeight: fontWeight6,
+                  text: listOfDriversString
+                ),
               ),
             ),
+            const Gap(10),
             GenericCardWidgetWithLeadingSvg(
               onTap: (){},
               title: driver1NameString,
@@ -81,10 +84,9 @@ showA({
               title: driver1NameString,
               price: '500',
               subtitle: '7000'
-            )
+            ),
           ],
         ),
       );
     },
   );
-}
