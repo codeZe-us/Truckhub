@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
@@ -144,7 +145,12 @@ class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
     return Card(
       elevation: 0,
       child: ListTile(
-        isThreeLine: true,
+        leading: SvgPicture.asset(
+          thirdSvg,
+          fit: BoxFit.contain,
+          width: 40,
+        ),
+        selectedTileColor: greenColor.shade200,
         onTap: onTap,
         title: GenericText(
           fontSize: fontSize3half,

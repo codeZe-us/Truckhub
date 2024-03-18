@@ -3,6 +3,7 @@ import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/utils/extensions.dart';
+import 'package:truckhub/screens/views/check_svg.dart';
 import 'package:truckhub/screens/views/confirm_phone_number/pincode_view.dart';
 import 'package:truckhub/screens/views/home_screen/main_home_screen.dart';
 import 'package:truckhub/screens/views/home_screen/sub_view/account_view/booked_drivers.dart';
@@ -47,7 +48,7 @@ class MyApp extends StatelessWidget {
         ),
         useMaterial3: true,
       ),
-      home: const GoogleMapView()
+      home: const SvgFlut()
     );
   }
 }
