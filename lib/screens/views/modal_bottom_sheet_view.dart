@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:lottie/lottie.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
@@ -133,6 +134,44 @@ Future<void> showViewProfileOrBookDriver({
                 )
               ],
             )
+          ],
+        ),
+      );
+    },
+  );
+
+
+
+
+  
+Future<void> showAwaitingDriversRespons({
+  required BuildContext context
+}) => showModalBottomSheet<void>(
+    backgroundColor: whiteColor,
+    context: context,
+    builder:(context) {
+      return Padding(
+        padding: const EdgeInsets.fromLTRB(80, 20, 80, 0),
+        child: ListView(
+          children: [
+            const Gap(20),
+            const GenericText(
+              fontSize: fontSize3,
+              fontWeight: fontWeight3,
+              text: waitingString
+            ),
+            const Gap(30),
+            // Lottie.asset(
+            //   'assets/lottie_animations/loading.json'
+            // ),
+            const Gap(30),
+            GenericElevatedButton(
+              color: blackColor,
+              backgroundColor: whiteColor,
+              noMargin: true,
+              onPressed: (){},
+              title: cancelString
+            ),
           ],
         ),
       );

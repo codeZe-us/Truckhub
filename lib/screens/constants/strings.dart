@@ -63,6 +63,7 @@ const driverPhone = '07012345679';
 const vehicleDetailsString = 'Vehicle Details';
 const truckDetailsString = 'Ford T-450, Black';
 const truckNumberString = 'FST537GX';
+const waitingString = 'Waiting for driver to respond';
 const driverDistanceString = '800m (5mins away)';
 const driverReviewString = 'Review about rider';
 const noReviewString = 'No review yet';
