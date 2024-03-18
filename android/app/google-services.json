@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "676055554223",
+    "project_id": "chidera-flutter-project",
+    "storage_bucket": "chidera-flutter-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:676055554223:android:04f7fbc20ddea287031c5a",
+        "android_client_info": {
+          "package_name": "com.example.truckhub"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyB4SQxtGZOLQdTA8nKYVCXOnhdkDKB9ZIw"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
