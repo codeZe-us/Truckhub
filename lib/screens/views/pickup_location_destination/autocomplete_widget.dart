@@ -1,11 +1,9 @@
-//import 'package:autocomplete_textfield/autocomplete_textfield.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_typeahead/flutter_typeahead.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
-import 'dart:developer' as marach show log;
 
 
 class GenericAutoCompleteWidget extends StatefulWidget {
@@ -46,7 +44,12 @@ class _GenericAutoCompleteWidget3State extends State<GenericAutoCompleteWidget> 
           ),
         );
       },
-      onSelected:(value) {},
+      onSelected:(suggestion) {
+        setState(() {
+          widget.controller.text = suggestion;
+        });
+      },
+      controller: widget.controller,      
       suggestionsCallback:(search) {
         if(search.isEmpty){
           setState(() => showSuffixIcon = false);
@@ -67,7 +70,7 @@ class _GenericAutoCompleteWidget3State extends State<GenericAutoCompleteWidget> 
           hintText: widget.hintText, 
           controller: controller,
           focusNode: focusNode,
-          leadingWidget: widget.leadingWidget,
+          leadingWidget: !showSuffixIcon ? widget.leadingWidget : null,
           suffixIcon: showSuffixIcon ? widget.suffixIcon : null,
         );
       },

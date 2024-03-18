@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
+import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
@@ -117,6 +119,64 @@ class _GenericCardWidgetWithTrailingTextState extends State<GenericCardWidgetWit
           text: widget.subtitle
         ),
       ),
+    );
+  }
+}
+
+
+
+
+
+class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
+  final void Function() onTap;
+  final String title, 
+  subtitle, price;
+
+  const GenericCardWidgetWithLeadingSvg({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.price,
+    required this.subtitle
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      elevation: 0,
+      child: ListTile(
+        leading: SvgPicture.asset(
+          thirdSvg,
+          fit: BoxFit.contain,
+          width: 40,
+        ),
+        selectedTileColor: greenColor.shade200,
+        onTap: onTap,
+        title: GenericText(
+          fontSize: fontSize3half,
+          fontWeight: fontWeight7,
+          text: title
+        ),
+        subtitle: Column(
+          crossAxisAlignment: CrossAxisAlignment.start,
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            GenericText(
+              fontSize: fontSize2half,
+              fontWeight: fontWeight3,
+              text: subtitle
+            ),
+            const Gap(5),
+            GenericText(
+              fontSize: fontSize3half,
+              fontWeight: fontWeight7,
+              color: greenColor,
+              text: price
+            ),
+          ],
+        ),
+
+      )
     );
   }
 }

@@ -8,6 +8,7 @@ import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
+import 'package:truckhub/screens/views/dialogs/list_of_drivers_dialog.dart';
 
 class GoogleMapView extends StatefulWidget {
   const GoogleMapView({super.key});
@@ -93,25 +94,30 @@ class _GoogleMapViewState extends State<GoogleMapView> {
                 child: GenericTextField(
                   hintText: searchForDriversString,
                   controller: controller,
-                  leadingWidget: const Padding(
-                    padding: EdgeInsets.only(left: 15, right: 10),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      mainAxisSize: MainAxisSize.min,
-                      children: [
-                        GenericText(
-                          color: blackColor,
-                          fontSize: fontSize3,
-                          fontWeight: fontWeight7,
-                          text: truckString
-                        ),
-                        GenericText(
-                          color: greenColor,
-                          fontSize: fontSize3,
-                          fontWeight: fontWeight7,
-                          text: hubString
-                        )
-                      ],
+                  leadingWidget: Padding(
+                    padding: const EdgeInsets.only(left: 15, right: 10),
+                    child: GestureDetector(
+                      onTap: (){
+                        showA(context: context);
+                      },
+                      child: const Column(
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        mainAxisSize: MainAxisSize.min,
+                        children: [
+                          GenericText(
+                            color: blackColor,
+                            fontSize: fontSize3,
+                            fontWeight: fontWeight7,
+                            text: truckString
+                          ),
+                          GenericText(
+                            color: greenColor,
+                            fontSize: fontSize3,
+                            fontWeight: fontWeight7,
+                            text: hubString
+                          )
+                        ],
+                      ),
                     ),
                   ),
                 ),

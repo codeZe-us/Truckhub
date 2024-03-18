@@ -23,6 +23,7 @@ class PickupLocationAndDestinationSearchScreen extends HookWidget {
       'Damilola',
       'Badamosi'
     ];
+    
     final controller1 = useTextEditingController();
     final controller2 = useTextEditingController();
     return GenericAnnotatedRegion(
