@@ -48,6 +48,7 @@ dependencies:
   flutter_rating_bar: ^4.0.1
   dots_indicator: ^3.0.0
   flutter_typeahead: ^5.2.0
+  firebase_core: ^2.27.1
 
 dev_dependencies:
   flutter_test:
