@@ -8,6 +8,7 @@ import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
+import 'package:truckhub/screens/views/modal_bottom_sheet_view.dart';
 
 class LandingPageScreen extends StatelessWidget {
   const LandingPageScreen({super.key});
@@ -85,7 +86,9 @@ class LandingPageScreen extends StatelessWidget {
                   children: [
                     const Gap(30),
                     GenericElevatedButton(
-                      onPressed: (){},
+                      onPressed: (){
+                        showViewProfileOrBookDriver(context: context);
+                      },
                       title: findAtruckString
                     ),
                     const Gap(15),

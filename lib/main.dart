@@ -50,7 +50,7 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: whiteColor),
           useMaterial3: true,
         ),
-        home: const GoogleMapView()
+        home: const LandingPageScreen()
       );
   }
 }
