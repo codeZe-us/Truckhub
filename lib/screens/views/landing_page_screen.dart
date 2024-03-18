@@ -87,7 +87,10 @@ class LandingPageScreen extends StatelessWidget {
                     const Gap(30),
                     GenericElevatedButton(
                       onPressed: (){
-                        showAwaitingDriversRespons(context: context);
+                        showBookingStatus(
+                          context: context,
+                          rideIsBooked: false
+                        );
                       },
                       title: findAtruckString
                     ),
