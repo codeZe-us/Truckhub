@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 
 // firebase
 import 'package:firebase_core/firebase_core.dart';
+import 'package:truckhub/screens/views/account_creation_pageview/main_view.dart';
 import 'package:truckhub/screens/views/welcome_back_screen.dart';
 import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
 import 'firebase_options.dart';
@@ -52,7 +53,7 @@ class MyApp extends StatelessWidget {
         colorScheme: ColorScheme.fromSeed(seedColor: whiteColor),
         useMaterial3: true,
       ),
-      home: const DriversProfileView()
+      home: const AccountCreationPageView()
     );
   }
 }
