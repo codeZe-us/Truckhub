@@ -11,6 +11,7 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/confirm_phone_number_view.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/create_account_view.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/setup_account_view.dart';
+import 'dart:developer' as marach show log;
 
 class AccountCreationPageView extends StatefulWidget {
   const AccountCreationPageView({super.key});
@@ -19,7 +20,8 @@ class AccountCreationPageView extends StatefulWidget {
   State<AccountCreationPageView> createState() => _AccountCreationPageViewState();
 }
 
-class _AccountCreationPageViewState extends State<AccountCreationPageView> {
+class _AccountCreationPageViewState extends State<AccountCreationPageView>{
+  late ValueNotifier<int> valueNotifier;
   late PageController controller;
   late TextEditingController phoneNumberController,
   passwordController;
@@ -29,6 +31,7 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView> {
     controller = PageController(initialPage: 0);
     phoneNumberController = TextEditingController();
     passwordController = TextEditingController();
+    valueNotifier = ValueNotifier(0);
     super.initState();
   }
 
@@ -37,6 +40,7 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView> {
     controller.dispose();
     phoneNumberController.dispose();
     passwordController.dispose();
+    valueNotifier.dispose();
     super.dispose();
   }
 
@@ -62,29 +66,61 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView> {
         body: ListView(
           children: [
             const Gap(20),
-            const Padding(
-              padding: EdgeInsets.fromLTRB(20, 0, 20, 0),
-              child: Row(
-                mainAxisSize: MainAxisSize.min,
-                children: [
-                  GenericCircleAnimateContainer(numberString: '1'),
-                  Expanded(
-                    child: GenericLineAnimateContainer()
-                  ),
-                  GenericCircleAnimateContainer(numberString: '2'),
-                  Expanded(
-                    child: GenericLineAnimateContainer()
-                  ),
-                  GenericCircleAnimateContainer(numberString: '3')
-                ],
+            Padding(
+              padding: const EdgeInsets.fromLTRB(20, 0, 20, 0),
+              child: ValueListenableBuilder(
+                valueListenable: valueNotifier,
+                builder:(_, value, __) {
+                  final inPage1 = value == 0;
+                  final inPage2 = value == 1;
+                  final inPage3 = value == 2;
+                  
+
+                  return Row(
+                    mainAxisSize: MainAxisSize.min,
+                    children: [
+                      GenericCircleAnimateContainer(
+                        numberString: '1',
+                        borderColor: greenColor,
+                        backgroundColor: inPage2 || inPage3 ? greenColor : whiteColor,
+                        isMarked: inPage2 || inPage3 ? true : false
+                      ),
+                      const Expanded(
+                        child: GenericLineAnimateContainer(
+                          borderColor: greenColor,
+                        )
+                      ),
+                      GenericCircleAnimateContainer(
+                        numberString: '2',
+                        borderColor: inPage2 || inPage3 ? greenColor : blackColor,
+                        backgroundColor: inPage3 ? greenColor : whiteColor,
+                        isMarked: inPage3 ? true : false
+                      ),
+                      Expanded(
+                        child: GenericLineAnimateContainer(
+                          borderColor: inPage3 ? greenColor : blackColor,
+                        )
+                      ),
+                      GenericCircleAnimateContainer(
+                        numberString: '3',
+                        borderColor: inPage3 ? greenColor : blackColor,
+                        isMarked: false
+                      )
+                    ],
+                  );
+                },
               ),
             ),
 
             const Gap(20),
-            Container(
-              height: 500,
+            SizedBox(
+              height: 400,
               child: PageView(
                 controller: controller,
+                onPageChanged: (pageIndex){
+                  valueNotifier.value = pageIndex;
+                  marach.log(valueNotifier.value.toString());
+                },
                 children: [
                   CreateAccountSubPageView(
                     passwordController: passwordController,

@@ -7,12 +7,16 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 
 class GenericCircleAnimateContainer extends StatelessWidget {
   final String numberString;
-  final Color? color;
+  final Color? borderColor,
+  backgroundColor;
+  final bool isMarked;
 
   const GenericCircleAnimateContainer({
     super.key,
     required this.numberString,
-    this.color
+    this.backgroundColor,
+    this.borderColor,
+    required this.isMarked
   });
 
   @override
@@ -24,16 +28,20 @@ class GenericCircleAnimateContainer extends StatelessWidget {
       width: 40,
       decoration: BoxDecoration(
         shape: BoxShape.circle,
-        color: color,
+        color: backgroundColor,
         border: Border.all(
-          color: color ?? blackColor,
+          color: borderColor ?? blackColor,
           width: 1
         )
       ),
-      child: GenericText(
-        fontSize: fontSize4,
-        fontWeight: fontWeight4,
-        text: numberString
+      child: Visibility(
+        visible: isMarked,
+        replacement: GenericText(
+          fontSize: fontSize4,
+          fontWeight: fontWeight4,
+          text: numberString
+        ),
+        child: const Icon(Icons.check, color: whiteColor),
       ),
     );
   }
@@ -44,11 +52,11 @@ class GenericCircleAnimateContainer extends StatelessWidget {
 
 
 class GenericLineAnimateContainer extends StatelessWidget {
-  final Color? color;
+  final Color? borderColor;
 
   const GenericLineAnimateContainer({
     super.key,
-    this.color
+    this.borderColor
   });
 
   @override
@@ -60,9 +68,9 @@ class GenericLineAnimateContainer extends StatelessWidget {
       width: 50,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        //color: greenColor,
+        color: greenColor,
         border: Border.all(
-          color: color ?? blackColor,
+          color: borderColor ?? blackColor,
           width: 1
         )
       ),
