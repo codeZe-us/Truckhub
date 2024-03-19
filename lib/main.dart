@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 
 // firebase
 import 'package:firebase_core/firebase_core.dart';
+import 'package:truckhub/screens/views/welcome_back_screen.dart';
+import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
 import 'firebase_options.dart';
 
 import 'package:truckhub/screens/constants/colors.dart';
@@ -35,22 +37,22 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'TruckHub',
-        theme: ThemeData(
-          navigationBarTheme: NavigationBarThemeData(
-            labelTextStyle: MaterialStatePropertyAll(
-              const TextStyle().decorateTextStyle(
-                color: blackColor,
-                fontWeight: fontWeight7,
-                fontSize: fontSize2
-              )
-            ),
+      debugShowCheckedModeBanner: false,
+      title: 'TruckHub',
+      theme: ThemeData(
+        navigationBarTheme: NavigationBarThemeData(
+          labelTextStyle: MaterialStatePropertyAll(
+            const TextStyle().decorateTextStyle(
+              color: blackColor,
+              fontWeight: fontWeight7,
+              fontSize: fontSize2
+            )
           ),
-          colorScheme: ColorScheme.fromSeed(seedColor: whiteColor),
-          useMaterial3: true,
         ),
-        home: const LandingPageScreen()
-      );
+        colorScheme: ColorScheme.fromSeed(seedColor: whiteColor),
+        useMaterial3: true,
+      ),
+      home: const DriversProfileView()
+    );
   }
 }

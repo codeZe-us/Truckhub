@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:gap/gap.dart';
-import 'package:lottie/lottie.dart';
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
