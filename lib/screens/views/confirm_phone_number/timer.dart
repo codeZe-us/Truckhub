@@ -52,7 +52,7 @@ class CountDownTimerView extends StatelessWidget {
             color: blackColor,
             fontSize: fontSize3,
             fontWeight: fontWeight8,
-            text: snapshot.data.toString() + sString
+            text: (snapshot.data ?? thirtyString).toString() + sString
           )
         ),
       ],

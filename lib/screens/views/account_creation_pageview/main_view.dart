@@ -8,9 +8,9 @@ import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/animated_container_widget.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
+import 'package:truckhub/screens/views/account_creation_pageview/sub_views/confirm_phone_number_view.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/create_account_view.dart';
-import 'package:truckhub/screens/views/confirm_phone_number/pincode_view.dart';
-import 'package:truckhub/screens/views/welcome_back_screen.dart';
+import 'package:truckhub/screens/views/account_creation_pageview/sub_views/setup_account_view.dart';
 
 class AccountCreationPageView extends StatefulWidget {
   const AccountCreationPageView({super.key});
@@ -90,7 +90,8 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView> {
                     passwordController: passwordController,
                     phoneNumberController: phoneNumberController,
                   ),
-                  ConfirmPhoneNumberScreen(),
+                  const ConfirmYourPhoneNumberSubPageView(),
+                  const SetupYourAccountSubView()
                 ],
               ),
             )

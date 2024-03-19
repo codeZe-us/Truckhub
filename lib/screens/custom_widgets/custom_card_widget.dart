@@ -47,7 +47,6 @@ class _GenericCardWidgetWithTrailingIconState extends State<GenericCardWidgetWit
           fontWeight: fontWeight7,
           text: widget.title
         ),
-        //subtitle: widget.subtitle,
       ),
     );
   }

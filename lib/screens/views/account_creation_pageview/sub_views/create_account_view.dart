@@ -1,11 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
 import 'package:truckhub/screens/constants/fontweights.dart';
 import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
-import 'package:truckhub/screens/custom_widgets/rich_text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textbutton_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
