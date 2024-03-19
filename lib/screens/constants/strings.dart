@@ -7,6 +7,8 @@ const truckHubSvg = 'assets/svg/Truckhub.svg';
 const backgroundPng = 'assets/png/back.png';
 const personPng = 'assets/png/f1.png';
 const truckHubLogoPng = 'assets/png/truck.png';
+const driverPng = 'assets/png/360_F_603684176_yoC9avI4gWMngtUWZh75H4ZrrJFhZrRZ.png';
+const phoneMapPng = 'assets/png/Truck-driving-GPS-apps.png';
 
 
 const nunitoFont = 'Nunito';
@@ -112,7 +114,8 @@ const ogigeMarketString = 'Ogige market close to peace park';
 const enuguRoadString = 'Enugu road before cathedral church';
 const driver2NameString = 'Mathew Ike';
 const driver3NameString = 'Chike Chukwudi';
-const introString = 'Embark on a seamless journey of finding reliable truck drivers for your transportation needs.';
+const introString = 'Embark on a seamless journey of finding reliable ';
+const introString2 = 'truck drivers for your transportation needs.';
 const userExperienceString = 'What was your experience with this rider';
 const termsAndPolicyString = """
 At TruckHub, is accessible from TruckHub.com. One of our main priorities is the privacy of our visitors.
