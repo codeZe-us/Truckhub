@@ -41,13 +41,15 @@ class ConfirmYourPhoneNumberSubPageView extends StatelessWidget {
           const Gap(20),
           const PinCodeFields(),
           const Gap(40),
-          GenericElevatedButton(
-            noMargin: true,
-            onPressed: (){
-              //Implement the confirm functionality here.
-            },
-            fontWeight: fontWeight7,
-            title: confirmString
+          Center(
+            child: GenericElevatedButton(
+              noMargin: true,
+              onPressed: (){
+                //Implement the confirm functionality here.
+              },
+              fontWeight: fontWeight7,
+              title: confirmString
+            ),
           ), 
           const Gap(50),
           const CountDownTimerView()

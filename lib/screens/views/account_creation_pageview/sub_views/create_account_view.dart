@@ -62,11 +62,13 @@ class CreateAccountSubPageView extends StatelessWidget {
             ),
           ),
           const Gap(40),
-          GenericElevatedButton(
-            onPressed: (){
-              //Implement the Log in funtionality here.
-            },
-            title: createAnAccountString
+          Center(
+            child: GenericElevatedButton(
+              onPressed: (){
+                //Implement the Log in funtionality here.
+              },
+              title: createAnAccountString
+            ),
           ),
           const Gap(50),
           const GenericText(

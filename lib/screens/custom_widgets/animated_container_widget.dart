@@ -68,7 +68,7 @@ class GenericLineAnimateContainer extends StatelessWidget {
       width: 50,
       decoration: BoxDecoration(
         shape: BoxShape.rectangle,
-        color: greenColor,
+        color: borderColor,
         border: Border.all(
           color: borderColor ?? blackColor,
           width: 1

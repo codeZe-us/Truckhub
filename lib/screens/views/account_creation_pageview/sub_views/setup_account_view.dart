@@ -1,11 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:truckhub/screens/constants/strings.dart';
+import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/row_with_leading_icon.dart';
 
 
-class SetupYourAccountSubView extends StatelessWidget {
-  const SetupYourAccountSubView({super.key});
+class SetupYourAccountSubPageView extends StatelessWidget {
+  const SetupYourAccountSubPageView({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -34,6 +35,16 @@ class SetupYourAccountSubView extends StatelessWidget {
           RowWithLeadingIconWidget(
             onTap: (){},
             title: vehicleReportString
+          ),
+          const Gap(60),
+          Center(
+            child: GenericElevatedButton(
+              noMargin: true,
+              onPressed: (){
+                //Implement the Log in funtionality here.
+              },
+              title: createAnAccountString
+            ),
           ),
         ],
       ),

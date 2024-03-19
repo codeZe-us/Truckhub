@@ -11,7 +11,7 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/confirm_phone_number_view.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/create_account_view.dart';
 import 'package:truckhub/screens/views/account_creation_pageview/sub_views/setup_account_view.dart';
-import 'dart:developer' as marach show log;
+
 
 class AccountCreationPageView extends StatefulWidget {
   const AccountCreationPageView({super.key});
@@ -55,11 +55,29 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView>{
               //Implement the functionality of this IconButton here
             },
           ),
-          title: const GenericText(
-            color: blackColor,
-            fontSize: fontSize4half,
-            fontWeight: fontWeight6,
-            text: createAnAccountString,
+          title: ValueListenableBuilder(
+            valueListenable: valueNotifier,
+            builder:(_, value, __) {
+              if(value == 0){
+                return const GenericText(
+                  color: blackColor,
+                  fontSize: fontSize4,
+                  fontWeight: fontWeight6,
+                  text: createAnAccountString,
+                );
+              }
+              else if(value == 2){
+                return const GenericText(
+                  color: blackColor,
+                  fontSize: fontSize4,
+                  fontWeight: fontWeight6,
+                  text: setupYourAccountString,
+                );
+              }
+              else{
+                return const SizedBox.shrink();
+              }
+            },
           ),
         ),
 
@@ -71,16 +89,14 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView>{
               child: ValueListenableBuilder(
                 valueListenable: valueNotifier,
                 builder:(_, value, __) {
-                  final inPage1 = value == 0;
                   final inPage2 = value == 1;
                   final inPage3 = value == 2;
                   
-
                   return Row(
                     mainAxisSize: MainAxisSize.min,
                     children: [
                       GenericCircleAnimateContainer(
-                        numberString: '1',
+                        numberString: oneString,
                         borderColor: greenColor,
                         backgroundColor: inPage2 || inPage3 ? greenColor : whiteColor,
                         isMarked: inPage2 || inPage3 ? true : false
@@ -91,7 +107,7 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView>{
                         )
                       ),
                       GenericCircleAnimateContainer(
-                        numberString: '2',
+                        numberString: twoString,
                         borderColor: inPage2 || inPage3 ? greenColor : blackColor,
                         backgroundColor: inPage3 ? greenColor : whiteColor,
                         isMarked: inPage3 ? true : false
@@ -102,7 +118,7 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView>{
                         )
                       ),
                       GenericCircleAnimateContainer(
-                        numberString: '3',
+                        numberString: threeString,
                         borderColor: inPage3 ? greenColor : blackColor,
                         isMarked: false
                       )
@@ -119,7 +135,6 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView>{
                 controller: controller,
                 onPageChanged: (pageIndex){
                   valueNotifier.value = pageIndex;
-                  marach.log(valueNotifier.value.toString());
                 },
                 children: [
                   CreateAccountSubPageView(
@@ -127,7 +142,7 @@ class _AccountCreationPageViewState extends State<AccountCreationPageView>{
                     phoneNumberController: phoneNumberController,
                   ),
                   const ConfirmYourPhoneNumberSubPageView(),
-                  const SetupYourAccountSubView()
+                  const SetupYourAccountSubPageView()
                 ],
               ),
             )
