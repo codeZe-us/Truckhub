@@ -28,6 +28,7 @@ class DriversProfileView extends StatelessWidget {
           fontWeight: fontWeight5,
         ),
       ),
+      
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: SingleChildScrollView(

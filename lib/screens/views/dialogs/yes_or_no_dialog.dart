@@ -33,7 +33,7 @@ Future<bool?> showYesOrNoAlertDialog<bool>({
       GenericTextButton(
         fontSize: fontSize3,
         fontWeight: fontWeight7,
-        onTap: ()=> Navigator.pop(context, false),
+        onTap: () => Navigator.pop(context, false),
         title: yesString
       )
     ],

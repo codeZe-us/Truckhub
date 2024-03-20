@@ -11,13 +11,11 @@ import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 class GenericCardWidgetWithTrailingIcon extends StatefulWidget {
   final void Function() onTap;
   final String title;
-  // final Widget? subtitle;
 
   const GenericCardWidgetWithTrailingIcon({
     super.key,
     required this.onTap,
     required this.title,
-    //this.subtitle,
   });
 
   @override
@@ -49,7 +47,6 @@ class _GenericCardWidgetWithTrailingIconState extends State<GenericCardWidgetWit
           fontWeight: fontWeight7,
           text: widget.title
         ),
-        //subtitle: widget.subtitle,
       ),
     );
   }
@@ -136,8 +133,8 @@ class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
     super.key,
     required this.onTap,
     required this.title,
+    required this.subtitle,
     required this.price,
-    required this.subtitle
   });
 
   @override
@@ -145,14 +142,21 @@ class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
     return Card(
       elevation: 0,
       child: ListTile(
-        leading: SvgPicture.asset(
-          thirdSvg,
-          fit: BoxFit.contain,
-          width: 40,
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(20)
         ),
-        selectedTileColor: greenColor.shade200,
+        minLeadingWidth: 0,
+        leading: SvgPicture.asset(
+          truckHubSvg,
+          fit: BoxFit.contain,
+          width: 80,
+        ),
+        selectedTileColor: greenColor,
+        dense: true,
+        selectedColor: greenColor,
         onTap: onTap,
         title: GenericText(
+          noCenterAlign: true,
           fontSize: fontSize3half,
           fontWeight: fontWeight7,
           text: title
@@ -175,7 +179,59 @@ class GenericCardWidgetWithLeadingSvg extends StatelessWidget {
             ),
           ],
         ),
+      
+      )
+    );
+  }
+}
 
+
+
+
+
+class GenericCardWidgetWithLeadingWidget extends StatelessWidget {
+  final void Function() onTap;
+  final String title, subtitle;
+  final Widget leadingWidgt;
+
+  const GenericCardWidgetWithLeadingWidget({
+    super.key,
+    required this.onTap,
+    required this.title,
+    required this.subtitle,
+    required this.leadingWidgt
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Card(
+      color: whiteColor,
+      elevation: 0,
+      child: ListTile(
+        contentPadding: const EdgeInsets.fromLTRB(5, 0, 0, 0),
+        shape: RoundedRectangleBorder(
+          borderRadius: BorderRadius.circular(10),
+          side: BorderSide(
+            width: 0.2,
+            color: blackColor.withOpacity(0.5),
+          )
+        ),
+        minLeadingWidth: 0,
+        leading: leadingWidgt,
+        dense: true,
+        onTap: onTap,
+        title: GenericText(
+          noCenterAlign: true,
+          fontSize: fontSize3half,
+          fontWeight: fontWeight7,
+          text: title
+        ),
+        subtitle: GenericText(
+          noCenterAlign: true,
+          fontSize: fontSize2half,
+          fontWeight: fontWeight3,
+          text: subtitle
+        ),
       )
     );
   }

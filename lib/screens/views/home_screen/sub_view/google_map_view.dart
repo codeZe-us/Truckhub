@@ -8,7 +8,6 @@ import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
 import 'package:truckhub/screens/custom_widgets/textfield_widget.dart';
-import 'package:truckhub/screens/views/dialogs/list_of_drivers_dialog.dart';
 
 class GoogleMapView extends StatefulWidget {
   const GoogleMapView({super.key});
@@ -97,9 +96,7 @@ class _GoogleMapViewState extends State<GoogleMapView> {
                   leadingWidget: Padding(
                     padding: const EdgeInsets.only(left: 15, right: 10),
                     child: GestureDetector(
-                      onTap: (){
-                        showA(context: context);
-                      },
+                      onTap: (){},
                       child: const Column(
                         mainAxisAlignment: MainAxisAlignment.center,
                         mainAxisSize: MainAxisSize.min,
