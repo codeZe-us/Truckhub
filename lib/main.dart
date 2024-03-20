@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 // firebase
 import 'package:firebase_core/firebase_core.dart';
 import 'firebase_options.dart';
+import 'package:firebase_auth/firebase_auth.dart';
 
 import 'package:truckhub/screens/constants/colors.dart';
 import 'package:truckhub/screens/constants/fontsizes.dart';
