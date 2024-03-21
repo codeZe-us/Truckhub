@@ -9,8 +9,10 @@ import 'package:truckhub/screens/constants/strings.dart';
 import 'package:truckhub/screens/custom_widgets/annotated_region_widget.dart';
 import 'package:truckhub/screens/custom_widgets/elevated_button_widget.dart';
 import 'package:truckhub/screens/custom_widgets/text_widget.dart';
+import 'package:truckhub/screens/views/account_creation_pageview/main_view.dart';
+import 'package:truckhub/screens/views/account_creation_pageview/sub_views/create_account_view.dart';
 import 'package:truckhub/screens/views/modal_bottom_sheet_view.dart';
-
+import 'package:truckhub/screens/views/welcome_to_truckhub_screen.dart';
 
 class LandingPageScreen extends StatefulWidget {
   const LandingPageScreen({super.key});
@@ -24,33 +26,24 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
   late ValueNotifier<int> valueNotifier;
   late Timer timer;
 
-  @override 
-  void initState(){
+  @override
+  void initState() {
     super.initState();
     pageController = PageController(initialPage: 0);
     valueNotifier = ValueNotifier<int>(0);
-    timer = Timer.periodic(
-      const Duration(seconds: 5), 
-      (timer) {
-        if(pageController.page == 2.0){
-          pageController.animateToPage(
-            0,
-            duration: const Duration(seconds: 2),
-            curve: Curves.decelerate
-          );
-        }
-        else{
-          pageController.nextPage(
-            duration: const Duration(seconds: 2),
-            curve: Curves.decelerate
-          );
-        }
+    timer = Timer.periodic(const Duration(seconds: 5), (timer) {
+      if (pageController.page == 2.0) {
+        pageController.animateToPage(0,
+            duration: const Duration(seconds: 2), curve: Curves.decelerate);
+      } else {
+        pageController.nextPage(
+            duration: const Duration(seconds: 2), curve: Curves.decelerate);
       }
-    );
+    });
   }
 
-  @override 
-  void dispose(){
+  @override
+  void dispose() {
     pageController.dispose();
     valueNotifier.dispose();
     timer.cancel();
@@ -73,21 +66,13 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 children: [
                   Center(
                     child: PageView(
-                      onPageChanged: (pageIndex) => valueNotifier.value = pageIndex,
+                      onPageChanged: (pageIndex) =>
+                          valueNotifier.value = pageIndex,
                       controller: pageController,
                       children: [
-                        Image.asset(
-                          personPng,
-                          fit: BoxFit.cover
-                        ),
-                        Image.asset(
-                          driverPng,
-                          fit: BoxFit.cover
-                        ),
-                        Image.asset(
-                          phoneMapPng,
-                          fit: BoxFit.cover
-                        )
+                        Image.asset(personPng, fit: BoxFit.cover),
+                        Image.asset(driverPng, fit: BoxFit.cover),
+                        Image.asset(phoneMapPng, fit: BoxFit.cover)
                       ],
                     ),
                   ),
@@ -122,20 +107,16 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                                 position: value,
                                 dotsCount: 3,
                                 decorator: DotsDecorator(
-                                  activeColor: whiteColor,
-                                  activeShape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5)
-                                  ),
-                                  activeSize: const Size(20, 8),
-                                  color: blackColor,
-                                  shape: RoundedRectangleBorder(
-                                    borderRadius: BorderRadius.circular(5),
-                                    side: BorderSide(
-                                      color: whiteColor.withAlpha(200),
-                                      width: 1
-                                    )
-                                  )
-                                ),
+                                    activeColor: whiteColor,
+                                    activeShape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5)),
+                                    activeSize: const Size(20, 8),
+                                    color: blackColor,
+                                    shape: RoundedRectangleBorder(
+                                        borderRadius: BorderRadius.circular(5),
+                                        side: BorderSide(
+                                            color: whiteColor.withAlpha(200),
+                                            width: 1))),
                               );
                             },
                           )
@@ -146,50 +127,44 @@ class _LandingPageScreenState extends State<LandingPageScreen> {
                 ],
               ),
             ),
-
             Expanded(
               flex: 1,
               child: BottomSheet(
                 constraints: BoxConstraints(
-                  maxHeight: screenHeight * 0.3,
-                  maxWidth: screenWidth
-                ),
+                    maxHeight: screenHeight * 0.3, maxWidth: screenWidth),
                 elevation: 0,
-                onClosing: (){},
-                builder: (context){
+                onClosing: () {},
+                builder: (context) {
                   return SizedBox(
                     width: screenWidth,
                     child: SingleChildScrollView(
                       child: Column(
-                        mainAxisSize: MainAxisSize.min,
-                        crossAxisAlignment: CrossAxisAlignment.stretch,
-                        children: [
-                          const Gap(30),
-                          GenericElevatedButton(
-                            onPressed: (){
-                              showBookingStatus(
-                                context: context,
-                                rideIsBooked: false
-                              );
-                            },
-                            title: findAtruckString
-                          ),
-                          const Gap(15),
-                          GenericElevatedButton(
-                            backgroundColor: whiteColor,
-                            color: blackColor,
-                            onPressed: (){},
-                            title: earnAsDriverString
-                          ),
-                          const Gap(90)
-                        ]
-                      ),
+                          mainAxisSize: MainAxisSize.min,
+                          crossAxisAlignment: CrossAxisAlignment.stretch,
+                          children: [
+                            const Gap(30),
+                            GenericElevatedButton(
+                              onPressed: () {
+                                Navigator.push(context,
+                                    MaterialPageRoute(builder: (context) {
+                                  return const WelcomeToTruckHubScreen();
+                                }));
+                              },
+                              title: findAtruckString,
+                            ),
+                            const Gap(15),
+                            GenericElevatedButton(
+                                backgroundColor: whiteColor,
+                                color: blackColor,
+                                onPressed: () {},
+                                title: earnAsDriverString),
+                            const Gap(90)
+                          ]),
                     ),
                   );
                 },
                 shape: RoundedRectangleBorder(
-                  borderRadius: BorderRadius.circular(0)
-                ),
+                    borderRadius: BorderRadius.circular(0)),
               ),
             )
           ],
